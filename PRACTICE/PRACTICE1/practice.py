@@ -20,6 +20,36 @@
 # num_2:int=13
 # print(num_1+num_2)
 # # /////////////////////////
+# a=10
+# b=20
+# result=a+b
+# print(result)
+# # /////////////////////////
+# c=10
+# d=13
+# print(c/d)
+# # /////////////////////////
+# c=10
+# d=13
+# print(c%d)
+
+# # /////////////////////////
+
+# e=10
+# f=10
+# print(e**f)
+# # exponent yani 10 ki power 10
+
+# # /////////////////////////
+
+# g=10
+# h=10
+# print(g//h)
+
+
+# # /////////////////////////
+
+
 # # arrat
 # namess=list = ["faiza","naaz"]
 # # /////////////////////////
@@ -68,6 +98,28 @@
 #     # ye length btay ga sath sath space bhi cout hoga
 # )
 # # //////////////////////////
+# multi line string
+
+# name_me:str=""" me,
+# faiza naaz"""
+# print(name_me)
+
+# # //////////////////////////
+
+# my_name_is:str="faiza"
+# my_namee:str="""me,
+# {my_name_is} naaz"""
+# print(name_me)
+
+# # //////////////////////////
+
+# # f string
+# my_f_string:str=f"me ,{my_name_is} naaz"
+# # ismy hm esy kr skty lekin multiple lie nhi le skty 
+# print(my_f_string)
+
+# # //////////////////////////
+
 # my_list =["faiza","naaz","areeba","honen"] 
 # print(my_list)
 # print(my_list[0])
@@ -181,3 +233,4 @@
 # print(slice_list)
 
 # /////////////////////////////
+
