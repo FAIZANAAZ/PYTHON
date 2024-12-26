@@ -233,4 +233,81 @@
 # print(slice_list)
 
 # /////////////////////////////
+# for loop
 
+# numbers_list:list[list[int]]=[1,2,3,4,5,6,7,8,9,10]
+# for number in numbers_list:
+#     print(number)
+# print(numbers_list)  
+  
+# jo chiz hm print me space dekr likhengy wo for loop ke ander ho agr print ko blkl line sy lga kr likhengy to wo for loop ke ander nhi ho ga
+# or jis jis ko bhi hmy loop ke ander rkhna he osko hm ak hi line ki squence me dengy matlb 2 word ka ya 1 lekin dengy zaror
+
+# /////////////////////////////
+
+# num=0
+# for i in range(1,11):
+#     num+=i
+#     print("faiza",i)
+# ye range wla he jismy hm ander sbky sath koch + krty hen ya - ya ye ke 1 ,11 yani start or end pont dety ke itni bar chalao map ko 
+
+
+
+# for i in range(1,11,2):
+#     print(i)
+ 
+# #ismy 3rd value ye kryga ke  matlb he ke kitna + (incriment) krna he to wo 1 sy 10 tk a jayga lekin agr hm likhengy 2 to wo 2 +kryga lekin wo rokyga 11 sy phly hi 
+
+
+
+# for i in range(10,1,-1):
+#     print(i)
+    
+# #yha sy wo reverce ho jayga 10 to  1 - me dengy 
+
+# for i in range(1,11,2):
+
+#  for i in range(1,11,2):
+#   print(i)
+#   if i==5:
+#     break
+# # ye 5 tk hi chalay ga phir break ho jayga esy if else likhety yha hm 
+
+# namess=["faiza","areeba","faizan","shoaib","alina"]
+# for index,item in enumerate(namess):
+#     print(index,item)
+    
+# # is trha hm index number ke sath vlue print krwa skty hen index ak varibale he oski jga koch bhi likh skty hen or item bhi ak variable he oski jga koch bhi likh skty hen
+# # /////////////////////////////
+
+# # while loop
+
+# while True:
+#     print("hello")
+    
+# num=0    
+# while num==5:
+#     print("hello") 
+# #ye print nhi hoga kioky condition false he 
+# numm=0
+# while numm<=5:
+#     print("hello")
+#     numm+=1
+
+# ////////////////////////////
+# python me do-while loop nhi hota he
+# ////////////////////////////
+# num_list =[1,2,3,4,5,6,7,8,9,10]
+
+# def my_function(num):
+#     return num*2
+   
+
+# myvar=list(map (my_function,num_list))
+# print(myvar)
+
+# # ismy function alag sy likh kr pas krengy or osmy conditon dengy jo pa krni he sb me 
+
+   
+    
+ 
