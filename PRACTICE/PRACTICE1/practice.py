@@ -195,6 +195,13 @@
 
 # list_method.reverse()
 # print(list_method)
+
+# ye list ko reverse krwayga end wali element ko first wali element ko replace krwayga  orosky  bad phir 3 phir 2 phir 1 or phir phir pichy sy sort kryga yani phly z waly name phir y
+
+# list_method.reverse()
+# list_method.sort()
+# print(list_method)
+
 # # ye list ko reverse krwayga end wali element ko first wali element ko replace krwayga  orosky  bad phir 3 phir 2 phir 1
 
 # list_method.clear()
@@ -308,6 +315,79 @@
 
 # # ismy function alag sy likh kr pas krengy or osmy conditon dengy jo pa krni he sb me 
 
+# ////////////////////////////
+# comperison operator with if else
+# ye input hota he jo sawal ke liye kam ata he form wagera ke liyye
+# input_name=input("enter your name")
+# print("hello",input_name)
+
+# input_age=int(input("enter your age"))
+# print("your age is",input_age)
+
+# if (input_age>=18):
+#     print("you can vote")
+# elif (input_age<18):
+#     print("you can not vote")
+# else:
+#     print("you can vote")
+# 
+# ////////////////////////////
+# logical operator with if else
+# name_age=input("enter your name ")
+# age_name=int(input("enter your age "))
+# if (name_age=="faiza" and age_name==18):
+#     print("you can vote")
+# else:print("you can not vote")
+
+# name_agee=input("enter your name ")
+# age_namee=int(input("enter your age "))
+# if (name_agee=="faiza" or age_namee==18):
+#     print("you can vote")
+# else:print("you can not vote")
+
+# ismy bhi wo dono hi cheq kryga dono true hongi to hi code run hoga  ak true or dosri ismy false waly di he
+# nname_age=input("enter your name ")
+# aage_name=int(input("enter your age "))
+# if (nname_age=="faiza" and not aage_name==18):
+#     print("you can vote")
+# else:
+#     print("you can not vote")
+
+
+
+
+
+
+
+
+
+
    
+# ////////////INFORMATION////////////////
+# Ture or False me T or F capital me hota he
+# paython --version ye cheq kryga ke paython install he ya nhi 
+# paython 3.13.1 Yani paython instal he
     
- 
+# int , float ,str,bol, list ,tuple, set, any
+
+# multiple line string=doc string 
+
+# "2"+1 esy coordinate nhi krwa skty hm paython me
+
+# code ko blkl start Sy likhengy space dekr nhi likh skty start me jesy print ya variable ka name
+
+# agr hm double slash lgaegengy to so single value return kry ga 0.6 ANS HOGA / ka to // ye bhi kryga devide lekin ye int value return kryga 0
+
+
+
+
+
+
+# ////////////READ////////////////
+# == equal to
+# != not equal to
+# > greater than
+# < less than
+# >= greater than or equal to
+# <= less than or equal to
+# // devide
