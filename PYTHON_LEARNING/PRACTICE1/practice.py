@@ -355,19 +355,24 @@
 
 # ////////////////////////////
 
-add = lambda num1 ,num2:num1+num2
-# ye ak function he jo perameters leta he 
-# num1 ,num2  ye dono perameter he jo function ke andar leta he
-# num1+num2 ye dono perameter ko add krwayga yanihe wo he jo hm {} ke ander likhty hen
+# add = lambda num1 ,num2:num1+num2
 
-print(add(10,4))
+# # ye ak function he jo perameters leta he 
+# # num1 ,num2  ye dono perameter he jo function ke andar leta he
+# # num1+num2 ye dono perameter ko add krwayga yanihe wo he jo hm {} ke ander likhty hen
+
+# print(add(10,4))
 
 
-def add2(num1:int,num2:int):
-    return num1+num2
-# YE DEFINITION WAALA FUNC HE 
+# def add2(num1:int,num2:int):
+#     return num1+num2
+# # YE DEFINITION WAALA FUNC HE 
     
-print(add2(10,4))
+# print(add2(10,4))
+
+# ////////////////////////////
+
+
 
 
 
