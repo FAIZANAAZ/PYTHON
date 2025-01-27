@@ -24,3 +24,34 @@ for n in x:
 
     # Har baar counter ko 1 se badhate hain
     counter += 1
+# //////////////////////////////
+
+# function ***************
+# we use function to avoid the repetition of code and make the code more readable
+# function is a block of code which only runs when it is called
+# function is defined by def keyword
+# function is called by function name followed by ()
+def function_name(parameters):
+    # function body
+    return parameters
+func=function_name("gulshan")
+print(func)
+
+# 2nd example
+
+def greeting(name):
+    # function body
+    print(f"Hello, {name}!")
+greeting("gulshan")
+greeting("ali")
+greeting("ahmed")
+
+
+# 3nd example
+
+def limit(age=9):
+    # function body
+    print(f"your age is, {age}!")
+limit(5)
+limit()
+# AGRKOCH NHI DENGY TO DEFAULT VALUE CHALYGA 9
