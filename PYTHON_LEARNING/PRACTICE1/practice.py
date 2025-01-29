@@ -477,7 +477,30 @@
 # hm paython me is trha krty hen import  krty hen 
 
 
+# //////////////// Dicshionarries ////////////////
 
+# # Dictionaries are used to store data values in key:value pairs.
+# # Dictionaries are written with curly brackets, and they have keys and values.
+
+# userdata = {
+#     "name": "faiza",
+#     "age": 18,
+#     "gender": "female"
+# }
+
+# print(userdata["name"])
+# print(userdata["age"])
+# print(userdata["gender"])
+
+# # hm esy print krwaty hen signgle value ko 
+# print(userdata)
+
+# # hm esy print krwaty hen sari value ko
+
+# userdata["name"] = "gulshan"
+# print(userdata["name"]) 
+
+# # hm esy kisi value ko update kr skty hen 
 
 
 
