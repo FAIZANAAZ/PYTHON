@@ -502,7 +502,8 @@
 
 # # hm esy kisi value ko update kr skty hen 
 
-
+# ///////////////////// oPEN FILE //////////////////////
+# # file = open("file.txt", "r")
 
 
 

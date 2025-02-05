@@ -5,7 +5,7 @@ def main():
     print("🎲✨ WELCOME TO THE GAME ✨🎲")
     print("="*40 + "\n")
     
-    user_input = int(input("👉 Choose a number: "))  #sbsy phly ak input bnaya taky yha user input me number dy
+    user_input = int(input("👉 Choose a number: "))  #sbsy phly ak input bnaya taky yha user input me number dy OR INT ISI LIYE LGAYA HE kioky input me hmesha string ki form me hi at he
     
     current_value = user_input  # hmny curenvalue me number ko store krdiya input ke taky hm isko multiplykrwa sken
 
