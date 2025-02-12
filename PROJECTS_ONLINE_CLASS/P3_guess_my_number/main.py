@@ -23,16 +23,14 @@ def guess_number():
 
 
     # Random number generation
-    number_to_guess = random.randint(1, 99)  # 1 se 99 tak random number
+    number_to_guess = random.randint(0, 99)  # 1 se 99 tak random number
     user_guess = int(input("🔢 Guess a number between 1 and 99: "))  # Ye bs ek hi bar chalayga 
 
     while user_guess != number_to_guess:
       try: 
          
          if user_guess > number_to_guess:
-            print("📉 Your guess is too high. Try again!")
-         elif user_guess=="":
-            print("📉 Your guess is too high. Try again!")   
+            print("📉 Your guess is too high. Try again!")  
          else:
             print("📈 Your guess is too low. Try again!")
 

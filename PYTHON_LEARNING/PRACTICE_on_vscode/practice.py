@@ -507,15 +507,63 @@
 
 
 
+# ////////// OBJECT ORIENTED PROGRAMING ///////////////
+# YE CODE Likhny ka ak tarika ha bs
+# ye hota ye he ke ak br bna kr bar bar use krna
 
 
+# hm ismy sbsy phly ak blue print bnanty (object) hen or osi ko bar bar use krengy
+
+# # ye hmny bnaya ak blue print
+# class House :
+#     adress :str ="Houser-Number 124"
+#     numbers_of_rooms :int = 3
+#     numbers_of_door :int = 2
+    
+#     # 
+# House1 = House()
+# print(House1.adress)
+# print(House1.numbers_of_rooms)
+# print(House1.numbers_of_door)
+# # esy hm acees bhi kr skty hen phly ak variable me rkhna hoga
+
+# # ye hmny ak  SY DOSRA BHI BNA LIYA or values change krli jo zarort thi chnage krny ki
+# House2 = House()
+# House2.adress = "Houser-Number 125"
+# House2.numbers_of_rooms = 2
+# House2.numbers_of_door = 1
+
+# print(House2.adress)
+# print(House2.numbers_of_door)
 
 
+# //////
+# CONSTRUCTER FUNCTION
+# YE krta ye he ke blue print ko use krky object bnata he 
+class constructer_house :
+    adress :str
+    def __init__(self,adress:str):
+        self.adress = adress
+        
+        # constructer func ka faida ye hota he ak ke hm isko ak normal function ki trha paameters pass kr skty hen or ye hm class ke nader bnaty hen to ye class ka part he 
+        # or isy ye hoga ke hm jitni bar class ko run krengy wo argument mangyga or har bar alag alg argument bna skty hen
+        # sef hm zaror rakhty wo iska part he isi sy hm dosri prperties ko acces krty hen
+    def str(self): 
+       return self.adress
+       
+           
+    #  ye simple function ki trha he bs he ye wesy hi contructer k trha same lekin ye ak function he isko hm property ki trha acees krengy . lga kr ismy bhi self likhty hen hm zaror
 
+   
 
-
-
-
+faiza_house = constructer_house("Houser-Number 124")
+Alina_house = constructer_house("Houser-Number 125")
+print(Alina_house.str())
+print(faiza_house.adress)
+print(Alina_house.adress)
+# ARGUMENT NHI DENGY TO ERROR AYGA 
+# hm diffrent house bnary hen lekn blue print ak hi use kry hen hm 
+   
 
 
 
