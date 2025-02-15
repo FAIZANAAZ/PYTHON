@@ -1,0 +1,39 @@
+lgana he 
+ChatGPT said:
+Gemini API Kya Hai?
+🔹 Gemini API Google ka ek Large Language Model (LLM) hai jo AI-powered responses generate karta hai.
+🔹 Yeh OpenAI ke ChatGPT jaisa hi hai, lekin Google ka apna AI model hai.
+🔹 Iska use text generation, question answering, summarization, translation aur AI-based tasks ke liye hota hai.
+
+Isko Use Kyun Kiya?
+✅ AI se koi bhi sawal poochne ke liye.
+✅ Python script ke andar Gemini AI embed karne ke liye.
+✅ Google Colab me AI-based automation ya chatbot banane ke liye.
+
+
+
+(1)OPEN colab and click krna he risht side pr jo chabi bni he osko
+(2)click (Gemini api key)
+(3)click manage key in google ai studio 
+(4)ak new window own ho jaygi (https://aistudio.google.com/app/apikey)ye
+(5)click create api key
+(6)copy krni he key or wapas google colab me ana he or wali chabi me jana he 
+(7)click on add new scret key or osmy key ka koi bhi name dekr value deni he yani key dalni he jo copy ki thi
+(8)click on add ak button hoga on off jesa osko on krna he
+
+<!-- for testing code -->
+<!-- from google.colab import userdata
+
+api_key  = userdata.get('OPEN_AI_API_KEY') //yha wo name dena he jo key ka hmny rkha he
+
+from google import genai
+
+client = genai.Client(api_key=api_key)
+
+response = client.models.generate_content(
+    model="gemini-2.0-flash-exp",
+    contents='What is Ai'
+)
+
+print(response.text)
+-->
