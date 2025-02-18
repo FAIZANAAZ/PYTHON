@@ -239,7 +239,32 @@
 # # ismy 1 wala index sy lekr  2 wala index tk yani 3 sy phly phly tk print  krwayga orwocopy bna kr krta he agr hm print krwaygy khali name again to wo wesa hi rhyga orginal
 # print(slice_list)
 
-# /////////////////////////////
+# ////////// ***touple///////////////////
+# Touple =("faiza","areeba","faizan","shoaib","alina")
+# # Touple.remove("faiza") # wrong
+
+# # toubleis afixed value do not change remove add 
+# # agr hm krna chahty hen update to hm osko list bnaengy 
+# my_touple=list(Touple)
+# my_touple.remove("faiza")
+# Touple=tuple(my_touple)
+# # Phiragain bnalo tuple
+# print(Touple)
+
+
+# ////////////////////////***Set***/////////////////////////////////
+set1={"faiza","faizan","shoaib","alina","alina"}
+print(set1)
+# ismy hm uniq chizen rakhty hen jha hm doblicate nhi krty na updatena change only one
+# hmny alina ko 2 bar likha he lekin wo my ak hi bar dikhayga kioky wo doblicate leta hi nhi he 
+# ismy koi order bhi nhi hota yani ye change bhi hota rhta he jesy 1 pr faiza he wha print me alina a jayga is trha hr word ka change hota rhta he
+
+
+
+
+# /////////////////////////////////////////////////////////
+
+
 # for loop
 
 # numbers_list:list[list[int]]=[1,2,3,4,5,6,7,8,9,10]
@@ -540,30 +565,31 @@
 # //////
 # CONSTRUCTER FUNCTION
 # YE krta ye he ke blue print ko use krky object bnata he 
-class constructer_house :
-    adress :str
-    def __init__(self,adress:str):
-        self.adress = adress
+# class constructer_house :
+#     adress :str
+#     def __init__(self,adress:str):
+#         self.adress = adress
         
-        # constructer func ka faida ye hota he ak ke hm isko ak normal function ki trha paameters pass kr skty hen or ye hm class ke nader bnaty hen to ye class ka part he 
-        # or isy ye hoga ke hm jitni bar class ko run krengy wo argument mangyga or har bar alag alg argument bna skty hen
-        # sef hm zaror rakhty wo iska part he isi sy hm dosri prperties ko acces krty hen
-    def str(self): 
-       return self.adress
+#         # constructer func ka faida ye hota he ak ke hm isko ak normal function ki trha paameters pass kr skty hen or ye hm class ke nader bnaty hen to ye class ka part he 
+#         # or isy ye hoga ke hm jitni bar class ko run krengy wo argument mangyga or har bar alag alg argument bna skty hen
+#         # sef hm zaror rakhty wo iska part he isi sy hm dosri prperties ko acces krty hen
+#     def str(self): 
+#        return self.adress
        
            
-    #  ye simple function ki trha he bs he ye wesy hi contructer k trha same lekin ye ak function he isko hm property ki trha acees krengy . lga kr ismy bhi self likhty hen hm zaror
+#     #  ye simple function ki trha he bs he ye wesy hi contructer k trha same lekin ye ak function he isko hm property ki trha acees krengy . lga kr ismy bhi self likhty hen hm zaror
 
    
 
-faiza_house = constructer_house("Houser-Number 124")
-Alina_house = constructer_house("Houser-Number 125")
-print(Alina_house.str())
-print(faiza_house.adress)
-print(Alina_house.adress)
+# faiza_house = constructer_house("Houser-Number 124")
+# Alina_house = constructer_house("Houser-Number 125")
+# print(Alina_house.str())
+# print(faiza_house.adress)
+# print(Alina_house.adress)
 # ARGUMENT NHI DENGY TO ERROR AYGA 
 # hm diffrent house bnary hen lekn blue print ak hi use kry hen hm 
    
+
 
 
 
