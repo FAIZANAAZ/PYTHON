@@ -1,3 +1,7 @@
+# Best python notes 
+# https://github.com/Sid-Taha/learning-python/blob/main/python_notes.md
+
+
 # my_name :str= "faiza"
 # print(my_name)
 # print(type(my_name))
@@ -240,6 +244,8 @@
 # print(slice_list)
 
 # ////////// ***touple///////////////////
+#Definition: A tuple is an ordered, immutable sequence of values.
+
 # Touple =("faiza","areeba","faizan","shoaib","alina")
 # # Touple.remove("faiza") # wrong
 
@@ -251,13 +257,58 @@
 # # Phiragain bnalo tuple
 # print(Touple)
 
+# names: tuple[str, str, str] = ("Taha", "Ahmed", "Alex")
+# print(names[0])  # Output: Taha
+
+# # jo method applay ho skty hen touple pr
+# print(Touple.index("faizan"))# output 1 index lekr ayga
+# print(Touple.count("faizan"))#output 1 .yani kitni bar faizan likha he list me
+# # Tuples support slicing like lists.
+# print(Touple[2:4])
 
 # ////////////////////////***Set***/////////////////////////////////
-set1={"faiza","faizan","shoaib","alina","alina"}
-print(set1)
+
+#A set is an unordered collection of unique elements. Because it is unordered, you cannot access elements via indexing. Instead, you iterate over the set or use membership tests.
 # ismy hm uniq chizen rakhty hen jha hm doblicate nhi krty na updatena change only one
 # hmny alina ko 2 bar likha he lekin wo my ak hi bar dikhayga kioky wo doblicate leta hi nhi he 
 # ismy koi order bhi nhi hota yani ye change bhi hota rhta he jesy 1 pr faiza he wha print me alina a jayga is trha hr word ka change hota rhta he
+
+# Checking if an element exists in a set is much faster than lists because sets use hashing.
+# example :
+       
+set1 : set[str]  ={"faiza","faizan","shoaib","alina","alina"}
+set2:set[str]={"12","13","14"}
+# # print(set1)
+
+# set1.add("faiza")#add kryga
+# set1.remove("faiza")#remove kryga
+# set1.pop()
+# Removes and returns an arbitrary element from the set.
+
+# set1.clear()
+# Removes all elements from the set.
+
+
+set1.update(set2)
+# Adds elements from another set (or any other sets) to the set.
+
+print(set1)
+# set1.discard("alina") # ye krta ye he ke jo dlet kry hen wo mil jata to delet krdeta nhi milta to chor deta errro nhi deta
+
+# print(set1)
+
+set3 = {1, 2, 3}
+set4 = {3, 4, 5}
+print(set3 | set4)  # Union → {3, 2, 3, 4, 5}
+print(set3 & set4)  # Intersection → {3}
+print(set3 - set4)  # Difference → {1, 2}
+
+# ye normal union intersection math waly ki trha he
+
+# ////////////////////////***INDEX***/////////////////////////////////
+
+
+
 
 
 
@@ -589,12 +640,6 @@ print(set1)
 # ARGUMENT NHI DENGY TO ERROR AYGA 
 # hm diffrent house bnary hen lekn blue print ak hi use kry hen hm 
    
-
-
-
-
-
-
 
    
 # ////////////INFORMATION//////////////// 
