@@ -243,6 +243,10 @@
 # # ismy 1 wala index sy lekr  2 wala index tk yani 3 sy phly phly tk print  krwayga orwocopy bna kr krta he agr hm print krwaygy khali name again to wo wesa hi rhyga orginal
 # print(slice_list)
 
+
+# ye slow hota he set sy kioky yeye linear searching krta he yani ak name dhondny ke liye wo start sy har name ko dkehna start krta he
+
+
 # ////////// ***touple///////////////////
 #Definition: A tuple is an ordered, immutable sequence of values.
 
@@ -273,8 +277,19 @@
 # hmny alina ko 2 bar likha he lekin wo my ak hi bar dikhayga kioky wo doblicate leta hi nhi he 
 # ismy koi order bhi nhi hota yani ye change bhi hota rhta he jesy 1 pr faiza he wha print me alina a jayga is trha hr word ka change hota rhta he
 
-# Checking if an element exists in a set is much faster than lists because sets use hashing.
+  
+# 
+
+# Checking if an element exists in a set is much faster than lists because sets use hashing .
 # example :
+# ismu ak hash function hota he jo  list ki har value ke badly ak hash code bnata he khod or osko ak baket me rkh deta he jiski wja sy wo extra memory let he 
+# hash collision : ismy hota ye he ke iska process ye hota he ke wo har value ka hash code bnata he or osy rkhta he ak nuket me or wo has esy bnta he ke wo ak has code bnata he or list me jitni value hoti hen osy devide krdeta he or jo number ata he os number ki buket me wo rakh deta he os value ko jes
+# list me 5 value hen {1,2,3,4,5} ab 1 ka hash code bnaya osny 305 osko deive kryga total number of value jesy 305/5 =2 ab 2 ans aya to wo 2 number wali basket me rakhdega 1 ko lekin ab esa bhi to ho skta he ke 2 ka hash code bnyga to diffent lekin 5 sy deivide krny sy bhi wo ay
+# 2 to same buket ho gai to wo same buket me rkhdega 1 or 2 dono ko or phir osy jb dhondna hoga to wo 2 number wali buket me jayga or onky has
+# code ko dekh kr le ayga kioky hash code to alg hi hoga dono ka 
+
+# hash buket *********
+
        
 set1 : set[str]  ={"faiza","faizan","shoaib","alina","alina"}
 set2:set[str]={"12","13","14"}
