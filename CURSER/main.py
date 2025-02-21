@@ -123,4 +123,10 @@ for i in enumerate(name_lst): # ye index number ke sath lekr ayga value
 for i in name_lst: # ye index number se start krega
     print(i)
 else : # ye loop complete ho jayega to ye else block chal jayega lekin chlyga lazim
-    print("Loop completed")    
+    print("Loop completed") 
+       
+#while loop 
+count =1 
+while count <= 10:
+    print(count)
+    count += 1
