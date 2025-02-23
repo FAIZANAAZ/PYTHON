@@ -291,34 +291,34 @@
 # hash buket *********
 
        
-set1 : set[str]  ={"faiza","faizan","shoaib","alina","alina"}
-set2:set[str]={"12","13","14"}
-# # print(set1)
+# set1 : set[str]  ={"faiza","faizan","shoaib","alina","alina"}
+# set2:set[str]={"12","13","14"}
+# # # print(set1)
 
-# set1.add("faiza")#add kryga
-# set1.remove("faiza")#remove kryga
-# set1.pop()
-# Removes and returns an arbitrary element from the set.
+# # set1.add("faiza")#add kryga
+# # set1.remove("faiza")#remove kryga
+# # set1.pop()
+# # Removes and returns an arbitrary element from the set.
 
-# set1.clear()
-# Removes all elements from the set.
+# # set1.clear()
+# # Removes all elements from the set.
 
 
-set1.update(set2)
-# Adds elements from another set (or any other sets) to the set.
-
-print(set1)
-# set1.discard("alina") # ye krta ye he ke jo dlet kry hen wo mil jata to delet krdeta nhi milta to chor deta errro nhi deta
+# set1.update(set2)
+# # Adds elements from another set (or any other sets) to the set.
 
 # print(set1)
+# # set1.discard("alina") # ye krta ye he ke jo dlet kry hen wo mil jata to delet krdeta nhi milta to chor deta errro nhi deta
 
-set3 = {1, 2, 3}
-set4 = {3, 4, 5}
-print(set3 | set4)  # Union → {3, 2, 3, 4, 5}
-print(set3 & set4)  # Intersection → {3}
-print(set3 - set4)  # Difference → {1, 2}
+# # print(set1)
 
-# ye normal union intersection math waly ki trha he
+# set3 = {1, 2, 3}
+# set4 = {3, 4, 5}
+# print(set3 | set4)  # Union → {3, 2, 3, 4, 5}
+# print(set3 & set4)  # Intersection → {3}
+# print(set3 - set4)  # Difference → {1, 2}
+
+# # ye normal union intersection math waly ki trha he
 
 # ////////////////////////***INDEX***/////////////////////////////////
 
@@ -489,14 +489,14 @@ print(set3 - set4)  # Difference → {1, 2}
 
 #     # Har baar counter ko 1 se badhate hain
 #     counter += 1
-# # //////////////////////////////
+
 
 # # function ***************
 # # we use function to avoid the repetition of code and make the code more readable
 # # function is a block of code which only runs when it is called
 # # function is defined by def keyword
 # # function is called by function name followed by ()
-# def function_name(parameters):
+# def function_name(parameters:str)->str:
 #     # function body
 #     return parameters
 # func=function_name("gulshan")
@@ -512,6 +512,7 @@ print(set3 - set4)  # Difference → {1, 2}
 # greeting("ahmed")
 
 
+
 # # 3nd example
 
 # def limit(age=9):
@@ -520,6 +521,16 @@ print(set3 - set4)  # Difference → {1, 2}
 # limit(5)
 # limit()
 # # AGR KOCH NHI DENGY TO DEFAULT VALUE CHALYGA 9
+
+# Output: 15
+
+# def func(post1,post2,*args,**kwargs):
+#     print(post1,post2)
+# func("first","second","extera1","extre2",key1="value1",key2="value2") 
+# # first and seccond khlayga position parameters jo ke os prameters me ayga jo hmny diye hen or alag alg print hoga
+# # extra waly arguments yani wo jiska parameters hmny nhi diya jo ke *args me ayga or khlayga (arbitary positional parameters) or ye sb ak tuples me bn kr print hoga
+# # key1, key2 ye hota he key word arguments or ye jayga **kwargs me or khlayga (arbitary keyword parameters) or ye print ak dictinary ki sorat me hoga 
+
 
 # // /////////// ERROR HANDLING /////////////////
 
@@ -573,7 +584,7 @@ print(set3 - set4)  # Difference → {1, 2}
 # # Dictionaries are used to store data values in key:value pairs.
 # # Dictionaries are written with curly brackets, and they have keys and values.
 
-# userdata = {
+# userdata:dict[str,any]= {
 #     "name": "faiza",
 #     "age": 18,
 #     "gender": "female"
@@ -584,14 +595,95 @@ print(set3 - set4)  # Difference → {1, 2}
 # print(userdata["gender"])
 
 # # hm esy print krwaty hen signgle value ko 
-# print(userdata)
+# # print(userdata)
 
 # # hm esy print krwaty hen sari value ko
 
 # userdata["name"] = "gulshan"
-# print(userdata["name"]) 
+# # REASIGN KRNA
+# userdata["student"] =   True
+# # full property add krna
 
-# # hm esy kisi value ko update kr skty hen 
+# del userdata["gender"]
+# # ye delete krdega gender ko
+
+# userdata.pop("student",None)
+# # ye delete krdega student ko ismy ye faida he pop ka del ke mokably me ke agr osko del krny wali value mil gai to delete krdega nhi mili to errro nhi dega
+
+# print(userdata.get("name", "not found"))
+# # ye get krdega name ko ismy agr name ko value mil gai to wo print krdeta he nhi mil gai to not found print krdeta he
+
+# for key, value in userdata.items():
+#     print(f"{key}: {value}")
+# # ye for looP BHI HOTA HE CHAHY TO SIRF KE VALUE PRINT KRDYGA YA SIRF KE KEY PRINT KRDYGA YA DONO PRINT KRDYGA    
+
+# for key in userdata.keys():
+#     print(key)
+
+# for value in userdata.values():
+#     print(value)
+# # ismy functions bhi hoty hen values waly sy bs values print hongi or keys waly sy sirf keys print hongi
+# for item in userdata.items():
+#     print(item)
+# #ye key value dono dyga tuple me ()isky ander 
+
+
+# print(userdata)
+# print(userdata["name"]) 
+# print(type(userdata["name"])) 
+# print(type(userdata["name"])) 
+
+
+# hm esy kisi value ko update kr skty hen 
+
+
+# ////////////////// COMPRIHENSION ////////////////
+# ye dictionary or list ko bnany ka quick tarika he 
+# list_me:list[str]=["x","y","z"]
+# name_list :list[str] = [old_name+"f" for old_name in list_me]
+# print(name_list)
+
+# my_dict :dict[str,str] = {old_name:old_name.capitalize() for old_name in list_me  if old_name != "x"}
+# print(my_dict)
+# ismy hoga ye ke jo list me he orignal wo key bn jayga or jo hmny modification ki he jesy capital wo value bn jayga ye hmny ak list ko dictionary  bnaya he
+# ye har name ke sath concatinate krwayga or f ko add krwayga jesy x ko xf yko yf zko zf hm ismy koch bhi kr skty hen jesy lower func uper sb
+# kr wa skty hen hm ak line me 
+
+# //////////////////// LIST FUNCTION //////////////
+# # Reduce function
+# # reduce ye krta he ke  hmara sari value pr condition lga kr ak value return krdeta he
+# # hmy isko import krna prhta he 
+# from functools import reduce 
+# # isko ak list chiye hoti he or ak function 
+# # isko hm likhty esy hen phly function phir parameter : phircondition phir list
+# my_list_reduce:int=[1,2,3,4,5]
+# total=reduce(lambda num1,num2 : num1+num2,my_list_reduce)
+# # ismy ye hota he ke phly waly parameter hota he 0 or dosra list ka phla value hota he or next me num1 me wahi total save ho jayga 
+# print(total) 
+
+#  Lamda ********
+
+# lambda_func =lambda num :num*2 
+# # lambda function ak bina name ka func hota he anonimus fuc bhi khlata he ye or isko hm variable me rkh kr name ety hen 
+
+# # num parameter he or num*2 ye consition he yani jo bhi krwana he or ismy return likhny ki zarorat nhi hoti wo direct krta he return 
+# print(lambda_func(5))
+
+# # map function******
+# numbers:int=[1,2,3,4,5]
+# new_list=map(lambda num : num*2,numbers)
+# # map ak function leta he jismy hm kam krty hen lambta leta he or ak list jisky liye kam krta he
+# # ye ak new list create krta he
+# map() function mein output ko list mein convert karna zaroori hai
+# print(list(new_list))
+
+# Filter function
+filter_list:list[int]=[1,2,3,4,5]
+filter(lambda num : num>3,filter_list)
+# ye bhi akfun or list leta he or filter krky nikalta he yanijo conditioan pas hoti osko ye filter yani rkhta he baqi sb nikal deta he
+# ye bhi new list create krta he orignalko change nhi krta
+
+
 
 # ///////////////////// oPEN FILE //////////////////////
 # # file = open("file.txt", "r")
@@ -646,7 +738,6 @@ print(set3 - set4)  # Difference → {1, 2}
 #     #  ye simple function ki trha he bs he ye wesy hi contructer k trha same lekin ye ak function he isko hm property ki trha acees krengy . lga kr ismy bhi self likhty hen hm zaror
 
    
-
 # faiza_house = constructer_house("Houser-Number 124")
 # Alina_house = constructer_house("Houser-Number 125")
 # print(Alina_house.str())
@@ -655,6 +746,31 @@ print(set3 - set4)  # Difference → {1, 2}
 # ARGUMENT NHI DENGY TO ERROR AYGA 
 # hm diffrent house bnary hen lekn blue print ak hi use kry hen hm 
    
+# /////////////// Modules ////////////////
+# import math
+# # ak ye tarika he kisi bny wy func ko import krny ka pathon sy
+# from math import pow
+# from math import comb
+# # FORM MATLB SY YANI KISI func sy YE hmny math ke function sy pow ko nikala he yani kisi func sy oski chizen import krwna ..or sirf pow hi hm ismy use kr skty hen
+# # math ko use nhhi kr skty osky liye math imort krNA HOGA kioky wo math sy pow ko lekr aya he naky 
+
+import streamlit as st
+# YE KHLATA HE  nick name dena yani (alias) yani strreamlite ko st sy  hm acces krengy ab 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    
 # ////////////INFORMATION//////////////// 
