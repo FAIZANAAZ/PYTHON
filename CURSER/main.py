@@ -109,7 +109,7 @@
 
 # ///////////////// LOOP //////////////////////
 # for loop
-name_lst= ["Rahul", "Rohan", "Rahul", "Rohan"]
+name_lst= ["alina", "Rohan", "Rahul", "sania"]
 for name in name_lst:  #ismy ak ak krky values ay gi 
     print(name)  
     
@@ -118,6 +118,8 @@ for i in range(1, 11): # 1 se 10 tak
 
     
 for i in enumerate(name_lst): # ye index number ke sath lekr ayga value
+    if i == "sania":
+        break # ye loop break krega
     print(i)
     
 for i in name_lst: # ye index number se start krega
@@ -125,8 +127,42 @@ for i in name_lst: # ye index number se start krega
 else : # ye loop complete ho jayega to ye else block chal jayega lekin chlyga lazim
     print("Loop completed") 
        
+for index, name in enumerate(name_lst): # ye index number se start krega
+    print(index, name)  
+# ////////////////////// while loop //////////////////////
 #while loop 
 count =1 
 while count <= 10:
     print(count)
     count += 1
+    
+ # //////////////////////  TUPLE //////////////////////
+# tuple is a collection of items that are ordered and immutable
+touple_list =("alina", "sania", "Rohan", "Rahul")
+# ye change nhi hota fix value store krega imutible
+# touple_list[0] = "DUA" # ye error dekhega or add remove op bhi nhi hota 
+# print(touple_list)
+
+
+# //////////////////////  SET //////////////////////
+# set is a collection of items that are unordered and immutable
+# ye curly brases me hoga
+# ye agypichy ho jata he iski squence ni hoti
+# ye uniq hota he yani duplicate value store nhi hoti agr oi name duplicate he towoak rakhyga ak nkaldega 
+set_list={"faiza","numra","rabia","dua"}
+# set_list.add("faiza") # ye add krega
+# print(set_list)
+# set_list.remove("faiza") # ye remove krega
+# print(set_list)
+# set_list.pop() # ye remove krega last element ko
+# print(set_list)
+# set_list.clear() # ye clear krega set ko
+# print(set_list)
+# set_list.discard("faiza") # ye remove krega faiza ko agr faiza nhi mikyga to error bhi nhi dega bs wesy hi run hoga
+# print(set_list)
+# set_list.pop() # ye remove krega last element ko
+# print(set_list)
+# set_list.remove("kghj") # ye error deg ke kghj tohe hi nhi jbky  discard error nhi dega
+# print(set_list)
+
+# //////////////////////   //////////////////////

@@ -663,11 +663,11 @@
 
 #  Lamda ********
 
-# lambda_func =lambda num :num*2 
-# # lambda function ak bina name ka func hota he anonimus fuc bhi khlata he ye or isko hm variable me rkh kr name ety hen 
+lambda_func =lambda num :num*2 
+# lambda function ak bina name ka func hota he anonimus fuc bhi khlata he ye or isko hm variable me rkh kr name ety hen 
 
-# # num parameter he or num*2 ye consition he yani jo bhi krwana he or ismy return likhny ki zarorat nhi hoti wo direct krta he return 
-# print(lambda_func(5))
+# num parameter he or num*2 ye consition he yani jo bhi krwana he or ismy return likhny ki zarorat nhi hoti wo direct krta he return 
+print(lambda_func(5))
 
 # # map function******
 # numbers:int=[1,2,3,4,5]
@@ -754,7 +754,7 @@ filter(lambda num : num>3,filter_list)
 # # FORM MATLB SY YANI KISI func sy YE hmny math ke function sy pow ko nikala he yani kisi func sy oski chizen import krwna ..or sirf pow hi hm ismy use kr skty hen
 # # math ko use nhhi kr skty osky liye math imort krNA HOGA kioky wo math sy pow ko lekr aya he naky 
 
-import streamlit as st
+# import streamlit as st
 # YE KHLATA HE  nick name dena yani (alias) yani strreamlite ko st sy  hm acces krengy ab 
 
 

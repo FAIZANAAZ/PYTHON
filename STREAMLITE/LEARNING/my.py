@@ -63,12 +63,26 @@ page = st.sidebar.radio("Go to", ["Home", "About", "Contact"])
 # radio yani jesy mcq me hota he click krny wala gol button
 
 # Home Page
-if page == "Home":
-    st.empty()
-    from home import home
-    home_page = st.Page(home, title="Home", icon="🏠")
-    # ye page homelera he or title or iconye tab keliye set ory hen g
-    pg = st.navigation([home_page])
+# if page == "Home":
+#     st.empty()
+#     from home import home
+#     home_page = st.Page(home, title="Home", icon="🏠")
+#     # ye page homelera he or title or iconye tab keliye set ory hen g
+#     pg = st.navigation([home_page])
 
-    # Current page ko run karein
-    pg.run()
+#     # Current page ko run karein
+#     pg.run()
+    
+# ////////////////LOGIN SYSTEM //////////////////////////
+    
+st.title("Login System")
+
+username = st.text_input("Enter username:")
+password = st.text_input("Enter password:", type="password")
+
+if st.button("Login"):
+    if username == "admin" and password == "123":
+        st.session_state["logged_in"] = True
+        st.switch_page("about.py")  # Redirect to About page
+    else:
+        st.error("Invalid credentials!")
