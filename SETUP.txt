@@ -1,0 +1,24 @@
+uv init
+#ye initialize kryga pekeges
+uv add ruff
+#ye add ruff to uv
+
+create file app.py (ya koch bhi)
+
+*****run krny ke liye******
+python  run app.py
+
+/**** for streamlit ********
+uv add streamlit
+//lekin ye ak ak krky sb add kryga 
+
+
+**second way**
+create file requirement.txt
+streamlit
+pandas
+run uv add -r requirement.txt
+
+//isy hmny ak ak krky ni krna pryga
+
+create hello.ipynb  
