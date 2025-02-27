@@ -1,3 +1,8 @@
+pip install uv
+pip list 
+//ye cheq krnyke liye ke kiya kiya pekiges hen hmary pas
+
+//*************for project********************
 uv init
 #ye initialize kryga pekeges
 uv add ruff
@@ -22,3 +27,6 @@ run uv add -r requirement.txt
 //isy hmny ak ak krky ni krna pryga
 
 create hello.ipynb  
+
+******** secod way *********
+requirment.txt

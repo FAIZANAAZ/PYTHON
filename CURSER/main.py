@@ -108,37 +108,37 @@
 # print(round(a, 2))# round krega ki 3.14
 
 # ///////////////// LOOP //////////////////////
-# for loop
-name_lst= ["alina", "Rohan", "Rahul", "sania"]
-for name in name_lst:  #ismy ak ak krky values ay gi 
-    print(name)  
+# # for loop
+# name_lst= ["alina", "Rohan", "Rahul", "sania"]
+# for name in name_lst:  #ismy ak ak krky values ay gi 
+#     print(name)  
     
-for i in range(1, 11): # 1 se 10 tak
-   pass # Agar aap ek for loop likh rahe hain lekin abhi uske andar koi logic nahi likhna chahte, toh aap pass use kar sakte hain:
+# for i in range(1, 11): # 1 se 10 tak
+#    pass # Agar aap ek for loop likh rahe hain lekin abhi uske andar koi logic nahi likhna chahte, toh aap pass use kar sakte hain:
 
     
-for i in enumerate(name_lst): # ye index number ke sath lekr ayga value
-    if i == "sania":
-        break # ye loop break krega
-    print(i)
+# for i in enumerate(name_lst): # ye index number ke sath lekr ayga value
+#     if i == "sania":
+#         break # ye loop break krega
+#     print(i)
     
-for i in name_lst: # ye index number se start krega
-    print(i)
-else : # ye loop complete ho jayega to ye else block chal jayega lekin chlyga lazim
-    print("Loop completed") 
+# for i in name_lst: # ye index number se start krega
+#     print(i)
+# else : # ye loop complete ho jayega to ye else block chal jayega lekin chlyga lazim
+#     print("Loop completed") 
        
-for index, name in enumerate(name_lst): # ye index number se start krega
-    print(index, name)  
+# for index, name in enumerate(name_lst): # ye index number se start krega
+#     print(index, name)  
 # ////////////////////// while loop //////////////////////
 #while loop 
-count =1 
-while count <= 10:
-    print(count)
-    count += 1
+# count =1 
+# while count <= 10:
+#     print(count)
+#     count += 1
     
  # //////////////////////  TUPLE //////////////////////
 # tuple is a collection of items that are ordered and immutable
-touple_list =("alina", "sania", "Rohan", "Rahul")
+# touple_list =("alina", "sania", "Rohan", "Rahul")
 # ye change nhi hota fix value store krega imutible
 # touple_list[0] = "DUA" # ye error dekhega or add remove op bhi nhi hota 
 # print(touple_list)
@@ -149,7 +149,7 @@ touple_list =("alina", "sania", "Rohan", "Rahul")
 # ye curly brases me hoga
 # ye agypichy ho jata he iski squence ni hoti
 # ye uniq hota he yani duplicate value store nhi hoti agr oi name duplicate he towoak rakhyga ak nkaldega 
-set_list={"faiza","numra","rabia","dua"}
+# set_list={"faiza","numra","rabia","dua"}
 # set_list.add("faiza") # ye add krega
 # print(set_list)
 # set_list.remove("faiza") # ye remove krega
@@ -165,4 +165,68 @@ set_list={"faiza","numra","rabia","dua"}
 # set_list.remove("kghj") # ye error deg ke kghj tohe hi nhi jbky  discard error nhi dega
 # print(set_list)
 
-# //////////////////////   //////////////////////
+# my_list :list[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# uniq_list =list(set(my_list))
+# print(uniq_list)
+
+# ismy hmny list kophly set me kiya taky wo osko uniq krde or phr osko list me convert krde taky hm uniq list ko use krsky
+
+# ////////////////////// DICTIONARY   //////////////////////
+
+# dictionary is a collection of key-value pairs
+# dictionary is mutable
+my_dict: dict[str,any]= {
+    "name": "John",
+    "age": 20, 
+    "city": "New York"}
+
+# my_dict["name"] = "Doe" # update krega
+# my_dict["work"] = "student" # isko ye mily ga nhi to ye add krdega khd
+# # dics me keys hmesha "" me hoti hen or values kisi bhi data type me ho skti hen
+# print(my_dict)
+# # print(my_dict["name"])# accessing the value by key
+
+# del  my_dict["age"] # ye remove krega yeerror bhi dega agr key nhi hogi to unknown key 
+# # print(my_dict)
+
+# remove_item = my_dict.pop("chity", None)# ye remove krega iska faida ye he del  ke mokably me keye error nhi deta or remove krta he or none returnkrdega ya wo jo hm likhengy  or remove krne ke bad value bhi return krta he
+# name_item=my_dict.pop("name","faiza")# ye remove krega or agr key nhi hogi to faiza return krdyga
+
+# name_item=my_dict.get("name","faiza") #ye get kryga or faiza return krdyga agr key nhi hogi 
+# print(name_item)
+
+# # itration in dictionary
+# for key in my_dict:
+#     print(key)
+#     # ye key print kryga bs
+#     print(key,my_dict[key])
+#     # ye key or value print kryga
+# for value in my_dict.values():
+#     print(value)
+#     # ye value print kryga bs
+# for key, value in my_dict.items():
+#     print(key, value)
+#     # ye key and value print kryga dono
+# print(my_dict.keys())
+# print(my_dict.values())
+# print(my_dict.items())
+# # ya hm esy bhi likh skty hen
+
+# ////////////////////// list Comparison  //////////////////////
+# list or lobject  kobnany kesath sath hi update conditionpass wagera krny ka tarika
+list1 = ["faiza", "Rohan", "alina", "sania", "Rahul"]
+        #  code       loop         extra condition 
+        # code or lopp dena lazmi he or extra condition deni lazmi  nhi he
+dict1 = {
+    "name": "John",
+    "age": 20,
+    "city": "New York"
+    
+}        
+        
+my_comp=[i.capitalize()      for i in list1       if i !="faiza"]
+NEW_DICT={key: value.capitalize() for key, value in dict1.items() if key !="name"}
+print(NEW_DICT)
+# ismy hmny list1 me jo name hen unko capitalize krdya or agr name faiza he to usko nhi uthaya or jo nhi he unko utha liya
+# 
+print(my_comp)
