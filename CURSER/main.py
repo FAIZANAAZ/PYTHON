@@ -175,10 +175,10 @@
 
 # dictionary is a collection of key-value pairs
 # dictionary is mutable
-my_dict: dict[str,any]= {
-    "name": "John",
-    "age": 20, 
-    "city": "New York"}
+# my_dict: dict[str,any]= {
+#     "name": "John",
+#     "age": 20, 
+    # "city": "New York"}
 
 # my_dict["name"] = "Doe" # update krega
 # my_dict["work"] = "student" # isko ye mily ga nhi to ye add krdega khd
@@ -212,21 +212,55 @@ my_dict: dict[str,any]= {
 # print(my_dict.items())
 # # ya hm esy bhi likh skty hen
 
-# ////////////////////// list Comparison  //////////////////////
+# ////////////////////// list / dictionary Comparison  //////////////////////
 # list or lobject  kobnany kesath sath hi update conditionpass wagera krny ka tarika
-list1 = ["faiza", "Rohan", "alina", "sania", "Rahul"]
-        #  code       loop         extra condition 
-        # code or lopp dena lazmi he or extra condition deni lazmi  nhi he
-dict1 = {
-    "name": "John",
-    "age": 20,
-    "city": "New York"
+# list1 = ["faiza", "Rohan", "alina", "sania", "Rahul"]
+#         #  code       loop         extra condition 
+#         # code or lopp dena lazmi he or extra condition deni lazmi  nhi he
+# dict1 = {
+#     "name": "John",
+#     "age": 20,
+#     "city": "New York"
     
-}        
+# }        
         
-my_comp=[i.capitalize()      for i in list1       if i !="faiza"]
-NEW_DICT={key: value.capitalize() for key, value in dict1.items() if key !="name"}
-print(NEW_DICT)
-# ismy hmny list1 me jo name hen unko capitalize krdya or agr name faiza he to usko nhi uthaya or jo nhi he unko utha liya
-# 
-print(my_comp)
+# my_comp=[i.capitalize()      for i in list1       if i !="faiza"]
+# NEW_DICT={key: value.capitalize() for key, value in dict1.items() if key !="name"}
+# print(NEW_DICT)
+# # ismy hmny list1 me jo name hen unko capitalize krdya or agr name faiza he to usko nhi uthaya or jo nhi he unko utha liya
+# # 
+# print(my_comp)
+
+
+# /////////////// FUNCTION /////////////////
+# lamda function
+# lemda_function = lambda cal1,cal2: print(cal1+cal2)
+
+# lemda_function(3,4)
+
+# # map is a class object 
+# # itretion 
+# # new modifier list 
+# # akneww list return krta he
+# n_list=[1,2,3,4,5,6,7,8,9,10]
+# map_list=map(lambda x: x*2 ,n_list)
+# print(list(map_list))
+
+# # filter
+# name_list=["faiza","alina","sania","Rohan","Rahul"]
+# filter_list=filter(lambda name: name=="faiza",name_list)
+# print(list(filter_list))
+# # isko bhilist me rkhna lazmime wrna wo list nhi bnata 
+# # ye bhi new list return krta he
+
+# ****** map modify krdeta he mapor filter nhi krta change cahnging nhi krta jesy mapfaiza ke sath naaz lga skta he
+# lekin filter nhi lga skta 
+
+# reduce
+name2_list=["faiza","alina","sania","Rohan","Rahul"]
+from functools import reduce
+reduce_list=reduce(lambda x,y: x+y,name2_list)
+# wo sary nameko join kRDY  GA KIOKY YE krta ye he ke list ka one word ans krta he 
+print(reduce_list)
+print(list(reduce_list))
+# isko hm list me nhi rkhty wesy agr rakhengy toye numbers koesitis krdega or names kotor dega f , i , z , a , a 

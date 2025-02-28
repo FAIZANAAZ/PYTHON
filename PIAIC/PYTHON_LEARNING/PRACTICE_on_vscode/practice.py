@@ -757,9 +757,21 @@ filter(lambda num : num>3,filter_list)
 # import streamlit as st
 # YE KHLATA HE  nick name dena yani (alias) yani strreamlite ko st sy  hm acces krengy ab 
 
+# hm ksi file ka name agr kikhen import app to wo khod hi sari file run  ho jayga 
 
+# //////////////// AUTO CALL /////////////////
 
+# def hello():
+#     print("hello")
+    
+# hello()
+# # agr hm isko esy hi chlaygy toagr hm is function ko kisi next file me jakr import krky use krengy to wo bina call kiye hi run hoa
+# # oskorokny ke liye hm use krty hen
+# if __name__ == "__main__":
+#     hello()
 
+# ismy ye hota he ke if ki condition pr depend ho jata he ye or jb hm isko kisi or file me import krty hen to ye __main__ apnifilenamekr
+# braber  ho jata he yani main ki jga app agr file ka name app heto 
 
 
 

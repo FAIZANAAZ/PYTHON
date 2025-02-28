@@ -62,5 +62,5 @@ Streamlit ki khaas baatein:
 (6)Main file path ..me hm main file ka name dengy jismy sy code othaY GA streamlit  jesy yha walli app.py
 (6)or phir repo ko conent krky deploy krdengy
 
-<!-- terminak me run krny ke liye -->
+<!-- terminal me run krny ke liye -->
 streamlit run app.py    
