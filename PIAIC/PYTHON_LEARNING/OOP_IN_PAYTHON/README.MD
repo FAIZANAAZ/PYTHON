@@ -254,3 +254,5 @@ Protected properties ko direct access kar sakte hain, lekin ye subfunctions me u
 Class ko Kaise Use Karte Hain?
 Pehle class ka ek object (instance) ek variable me store karte hain.
 Phir us variable ke through dot (.) operator laga kar uske methods aur properties ko access karte hain.
+
+
