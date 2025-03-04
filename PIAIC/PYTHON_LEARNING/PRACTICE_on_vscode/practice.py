@@ -774,8 +774,38 @@ filter(lambda num : num>3,filter_list)
 # braber  ho jata he yani main ki jga app agr file ka name app heto 
 
 
+# ///////////// try excep //////////////
+# # try exeptkause hm isi liye krty hen kioky agr koi errror ata he to wo agy ka code rok detahe runnhi hony deta sara 
+# # kamrok jata he 
+# number=0
+# try:
+#     print(10/number)
+# except ZeroDivisionError:
+#     print("you cant divide by zero")
 
+# #ismy hm try me true code likhty hen or exception me false code likhty hen
+# # or hmyjopta hon ke is type ka error any wala he tohm isme usi type ka error likh skty hen
+# # agr nhita to hoderror create krky hm isme usi type ka error likh skty hen
+# # or agr esa error jiski typenaho ya zada nhi likhna chaly to hm Exception likh skty hen ya bs except : print("error") likh skty hen
 
+# try :
+#     print(10/number)
+# except Exception as e:
+#     print("error",e)
+#     # ismy kisi bhi type kaerrro ayga to wo catch ho jayga
+    
+#  # jesy kisi bhi jha 2 kismke errro bhiaskty hen tohm dono type de dengy
+ 
+  
+
+# try:
+#     print(10/number)
+# except ZeroDivisionError:
+#     print("you cant divide by zero")
+# except Exception as e:
+#     print("error",e)
+    
+#     # ismy ye hoga ke jonsa error hoga wo catch ho jayga or dosra wla ignoree ho jayga khod
 
 
 

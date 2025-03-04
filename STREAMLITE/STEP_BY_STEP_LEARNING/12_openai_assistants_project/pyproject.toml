@@ -1,11 +1,12 @@
 [project]
-name = "11-connect"
+name = "13-openai-assistants-project"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "openai>=1.65.2",
+    "plotly>=6.0.0",
     "ruff>=0.9.9",
-    "sqlalchemy>=2.0.38",
     "streamlit>=1.42.2",
 ]
