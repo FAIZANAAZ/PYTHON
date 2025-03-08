@@ -807,7 +807,18 @@ filter(lambda num : num>3,filter_list)
     
 #     # ismy ye hoga ke jonsa error hoga wo catch ho jayga or dosra wla ignoree ho jayga khod
 
+# ///////////////////// raise error /////////////////
 
+# class ExeptionError(Exception):
+#     pass
+
+# try :
+#     raise ExeptionError("this is a custom error")
+# except ExeptionError as e:
+#     print(e)
+
+ #hm is trha error generate krty hen 
+ 
 
 
 
