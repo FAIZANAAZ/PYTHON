@@ -71,10 +71,94 @@ class Teacher(Student,Human):
           Student.__init__(self,name,age)
           Human.__init__(self,name)
         #   hm is trha phonchaygy multiple classes ko inherit krty wy super sy nhi krengy 
+        # ye self wha sy lakr ara he name age ko
           self.teacher_own=teacher_own
+          
       
+       
   
 teacher=Teacher("Rohit",20,"Physics")     
 print(teacher.name,teacher.age,teacher.teacher_own)
 teacher.speak()
-#   jb multiple inherited hoti hen classes or osmy same name ke methods hon orhm iskoaa acces krty hen to wo osko leta he jiska name phly hota he yani student sy kioky wo phly sy class Teacher(Student,Human):  ismy agr hm human phly likhengy to wo human wala speak othayga
+#   jb multiple inherited hoti hen classes or osmy same name ke methods hon orhm iskoaa acces krty hen to wo osko leta he jiska name phly hota 
+# he yani student sy kioky wo phly sy class Teacher(Student,Human):  ismy agr hm human phly likhengy to wo human wala speak othayga
+
+
+
+
+# /************magical functions *****************/
+
+class Vectors:
+    
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+        
+    def __str__(self):
+        return f"{self.name} is a teacher and teach {self.teacher_own}"
+    
+    def   __add__(self,other):
+        if isinstance(other,Teacher):
+            return Teacher(self.age+other.age)
+        raise TypeError("can only add teacher")
+    
+    def __call__(self, *args, **kwds):
+        return super().__call__(*args, **kwds)
+    
+V1=Vectors(1,2)
+V2=Vectors(1,2)
+print(V1+V2)
+
+
+# pilar 2) Polymorphism *************************/
+
+# polymorphism is allow us to use same method name with different parameters or return types
+# 1) method overloading
+
+class Dog :
+    def speak(self):
+        print("Dog is speaking")
+    
+class Cat(Dog):
+    def speak(self):
+      print("Cat is speaking")
+    
+    
+class AnimalChild2(Dog):
+    def speak(self):
+        print("AnimalChild2 is speaking")
+    
+
+        
+        
+dog=Dog()
+
+cat=Cat()
+
+animal_child=AnimalChild2()
+
+
+
+dog.speak()
+cat.speak()
+animal_child.speak()
+
+
+# jiska intance pr hm .speak likhengy wo osi ka chaly ga matb har method ke pas 2 speak hen ak apna or ak Dog ka inherited kiye howy lekin hm agr jis class ke instence ke sath . lgaygy wo usi ka chaly ga Dog ka nhi clyga or hn agr apny pass he hi nhi to phir animal wala chalyga
+
+# DUCK TYPING **********************
+def Animal_sound(animal :Dog):
+        print(f"the animal makes a {animal.speak()} sound")
+        
+dog=Dog()
+Animal_sound(dog)
+# ismy hmy class dena hoga kioky oski type he Dog ya to dog hi dedo ya wo class bhi de skty hen jismy Dog ke baraber hon sb method property sb with same name 
+
+# ak to same name ka method hona lazmi he agr koi dosra method he jiska name dosra he to wo  bhi hm pass kr skty hen lekin hm osko use nhi kr skty 
+
+def Animal_sound_array(animal:list[Dog,Cat]):
+    pass
+
+dog=Dog()
+cat=Cat()
+Animal_sound_array([dog,cat])
