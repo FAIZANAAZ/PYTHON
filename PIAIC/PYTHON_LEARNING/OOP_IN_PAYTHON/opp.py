@@ -170,29 +170,132 @@
 # protected # ye developersanbhalta he
 # public or private hota same hi he
 
-class Mother:
-    def __init__(self):
-        self.__private_var = 10  # ✅ Private variable
-        self.public_var = 20  # ✅ Public variable
-        self._protected_var = 30  # ✅ Protected variable
+# class Mother:
+#     def __init__(self):
+#         self.__private_var = 10  # ✅ Private variable
+#         self.public_var = 20  # ✅ Public variable
+#         self._protected_var = 30  # ✅ Protected variable
         
-    def get_age(self):
-        return self.__private_var  # ✅ Private variable access
+#     def get_age(self):
+#         return self.__private_var  # ✅ Private variable access
+#     # ismy hm bs get kr skty modify ke liye hmy seter ka use krna hoga
     
-    def set_age(self, age):
-        self.__private_var = age  # ✅ Private variable modify
+#     def set_age(self, age):
+#         self.__private_var = age  # ✅ Private variable modify
+        
+#   #seter me or geter e farq ye he ke geter me privat ko return kiya wa hoga or seter me privat ko modify kiya wahoga kioky name to koch bhi ho skta he 
 
-class Child(Mother):
+# class Child(Mother):
+#     def __init__(self):
+#         super().__init__()  # ✅ Parent class ka constructor call karna zaroori hai
+
+# # ✅ Objects create karna
+# mother = Mother()    
+# child = Child()
+
+# # ✅ Ab error nahi aayega
+# print(child.public_var)  # Output: 20
+# print(child.get_age())   # Output: 10
+
+# # private var ko access nhi kr skte
+
+# print(Child.__mro__)
+# # ISY HM wo sb kvoh dekh skty hen jo chid class me he yani wo object or kon konsi class inherited ki hoi he ismy to chiz phly
+# # print hogi yani oski value zada he bad wali class sy 
+
+
+# ************ Abstraction ********************
+
+# Abstraction or Abstraction Class alag alag chizen hen
+
+# Abstraction is the process of hiding the implementation details and showing only the essential features of an object to the user.
+# jesyy hm protected wagera lga kr hm hide krty hen isimko abstraction khty he 
+
+# **Abstraction Class**
+
+# abc stand for abstract base class
+# kisi class ko abstrackt bnany ke liye hm abc module ka use krty hen ABC inheritet krwaty hen or abstractmethod use krty hen jis method ke oper 
+# abstractmethod likh hoga to osko agrkoi class inherit krygi to osko apny ander zaror bnayga dobara
+
+#  osabstraction ka instance nhi banta
+# from abc import ABC , abstractmethod
+# class Abstract_class(ABC):
+#     @abstractmethod
+#     def walk (self):
+#         pass
+  
+    
+# # class_abc=Abstract_class() # error aayega kyunki abstract class ka instance nhi banta  
+
+# class  Faiza(Abstract_class):
+#     def __init__(self):
+#         super().__init__()
+#     def walk(self):
+#             print("Faiza is walking")
+#             # ye lazim he kyunki abstract me isky oper abstractmethod likh hua he
+            
+#             # OR AGR 2 METHOD HEN OR AK BNA LIYA TO WO AK BHI NHI CHALY ga jb tb hm 2 waly ko bhi na bana len
+            
+# fz=Faiza()
+# fz.walk()
+# # iska bn jayga            
+ 
+ 
+ 
+#*****************CLASS VARIABLE & STATIC METHOD & DIR ************************
+# class instance ke bina hm class constracter ke ander ke variable ko access NHI  kr skty hen 
+
+# lekin hm class ke ander ke variable ko access kr skty hen
+
+class Human:
+    species="human"
     def __init__(self):
-        super().__init__()  # ✅ Parent class ka constructor call karna zaroori hai
+        self.name=43
+       
+    @staticmethod        
+    def static_method():    
+        print("this is static method")
+        # ISMY selfnhi hota isiliye hm iske ander static variable ko access kr skty hen jesy self.name=name
+        # ye todynamic ho jata he ismy self hi nhi he YE CHANGE NHI HO SKTA 
+    
+    
+  
+print(Human.species) # ye result de dega        
+# print(Human.name) # ye result nhi de dega
+print(Human().name) # ye result de dega
+Human.static_method() # ye result de dega
 
-# ✅ Objects create karna
-mother = Mother()    
-child = Child()
+print(dir(Human))
+# ye sb koch dikha dega ke kiya kiya hen variables methods sb LEKIN ATRIBUTES NHI DIKHAYGA OSKO DEKHNYKE LIYE HMY INTANCE KO BANA kr print krna hoga instance
 
-# ✅ Ab error nahi aayega
-print(child.public_var)  # Output: 20
-print(child.get_age())   # Output: 10
+human=Human()
+print(dir(human))
+# ye dikha dega atribues bhi 
 
-# private var ko access nhi kr skte
+# ************ IMPORT & EXPORT ********************
 
+# class IMPORT_EXPORT:
+#     def __init__(self):
+#         self.input=0
+#         self.output=0
+#         self.IMPORT_EXPORT:=0
+#         self.input_output=0
+        
+#  next file main.py
+#  from app import IMPORT_EXPORT
+ 
+# is trha krty hen hm  import class ko or export 
+
+
+
+     
+# ********************* call and str method ****************
+
+class Class_call:
+    def __init__(self):
+        self.name="Rahul"
+        self.age=21
+        def __str__(self):
+            return f"Name: {self.name}, Age: {self.age}"
+        def __call__(self):
+            print("Hello, my name is", self.name, "and I am", self.age, "years old.")

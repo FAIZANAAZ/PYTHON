@@ -15,12 +15,26 @@ def convert_unit(value, unit_from, unit_to):
     else:
         return "Conversion not found"
 
-st.title("Unit Converter")
+# 🎨 Customizing the UI
+st.markdown("<h1 style='text-align: center; color: #4CAF50;'>Unit Converter</h1>", unsafe_allow_html=True)
+st.write("#### Convert between different units easily!")
 
-value = st.number_input("Enter a value", min_value=1.0, step=1.0)
-unit_from = st.selectbox("Convert From", ["meter", "kilometer", "gram", "kilogram"])
-unit_to = st.selectbox("Convert To", ["meter", "kilometer", "gram", "kilogram"])
+st.divider()  # 🎚️ Adds a visual separator
 
-if st.button("Convert"):
+# 🌟 Using columns for a better layout
+col1, col2 = st.columns(2)
+
+with col1:
+    value = st.number_input("🔢 Enter a value", min_value=1.0, step=1.0)
+
+with col2:
+    unit_from = st.selectbox("🔄 Convert From", ["meter", "kilometer", "gram", "kilogram"])
+    unit_to = st.selectbox("🎯 Convert To", ["meter", "kilometer", "gram", "kilogram"])
+
+st.divider()  # 🎚️ Adds another separator
+
+# 🚀 Styled Convert Button
+if st.button("🔁 Convert", use_container_width=True):
     result = convert_unit(value, unit_from, unit_to)
-    st.success(result)
+    st.success(f"✅ **Converted Value:** {result}")
+
