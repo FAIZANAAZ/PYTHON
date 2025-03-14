@@ -247,30 +247,32 @@
 
 # lekin hm class ke ander ke variable ko access kr skty hen
 
-class Human:
-    species="human"
-    def __init__(self):
-        self.name=43
+# class Human:
+#     species="human"
+#     def __init__(self):
+#         self.name=43
        
-    @staticmethod        
-    def static_method():    
-        print("this is static method")
-        # ISMY selfnhi hota isiliye hm iske ander static variable ko access kr skty hen jesy self.name=name
-        # ye todynamic ho jata he ismy self hi nhi he YE CHANGE NHI HO SKTA 
+#     @staticmethod        
+#     def static_method():    
+#         print("this is static method")
+#         # ISMY selfnhi hota isiliye hm iske ander static variable ko access kr skty hen jesy self.name=name
+#         # ye todynamic ho jata he ismy self hi nhi he YE CHANGE NHI HO SKTA 
+        
+#         # yebina instance bnay hm isko get kr skty hen bahir
     
     
   
-print(Human.species) # ye result de dega        
-# print(Human.name) # ye result nhi de dega
-print(Human().name) # ye result de dega
-Human.static_method() # ye result de dega
+# print(Human.species) # ye result de dega        
+# # print(Human.name) # ye result nhi de dega
+# print(Human().name) # ye result de dega
+# Human.static_method() # ye result de dega
 
-print(dir(Human))
-# ye sb koch dikha dega ke kiya kiya hen variables methods sb LEKIN ATRIBUTES NHI DIKHAYGA OSKO DEKHNYKE LIYE HMY INTANCE KO BANA kr print krna hoga instance
+# print(dir(Human))
+# # ye sb koch dikha dega ke kiya kiya hen variables methods sb LEKIN ATRIBUTES NHI DIKHAYGA OSKO DEKHNYKE LIYE HMY INTANCE KO BANA kr print krna hoga instance
 
-human=Human()
-print(dir(human))
-# ye dikha dega atribues bhi 
+# human=Human()
+# print(dir(human))
+# # ye dikha dega atribues bhi 
 
 # ************ IMPORT & EXPORT ********************
 
@@ -289,13 +291,71 @@ print(dir(human))
 
 
      
-# ********************* call and str method ****************
+# ********************* call and str method dir ****************
 
-class Class_call:
-    def __init__(self):
-        self.name="Rahul"
-        self.age=21
-        def __str__(self):
-            return f"Name: {self.name}, Age: {self.age}"
-        def __call__(self):
-            print("Hello, my name is", self.name, "and I am", self.age, "years old.")
+# class Class_call:
+#     def __init__(self):
+#         self.name="Rahul"
+#         self.age=21
+#         def __str__(self):
+#             return f"Name: {self.name}, Age: {self.age}"
+#         def __call__(self):
+#             print("Hello, my name is", self.name, "and I am", self.age, "years old.")
+#             # ye intance ko call krne ke liye use krna hota he
+            
+# per=Class_call()
+# print(per())  # ye error dega agr hmny ismy __call__ nhi likha heto      __call__ ka method isky intance ko call krne ke liye use krna hota he
+
+# # ******
+# print(dir()) # ye sb dikha dega jjitny bhi magic method hoty hen
+
+# # ******
+# print(per) # jb hm instance ko chalaty hen bina koch acces kiye to str chal jata he khod ab hm osmy koch bhi de skty koi bhi sms wagera
+
+# *************************FILE READ AND WRITE IN DIFFERENT FILE ***************************
+# with open("file.txt","r") as f:
+#     print(f.read())
+    
+# #ismy hm 2 oarameter dety hen string me jo file name he aur second wala string me jo mode he r w ya w+ ya a+ ya a
+# # r yani read mode
+# # w yani write mode
+# # a yani append mode
+# # r+ yani read and write mode
+# # a+ yani append and write mode
+# # w+ yani write and read mode
+
+# with open("file.txt","w") as f:
+#     f.write("hello world")
+#     f.write("\nfaiza naaz")
+    
+#     # ismy hm jo likhengy wo file.txt me save ho jata he
+    
+#***********************  DECORATOR FUNCTION ******************** 
+
+# def decorator_function(original_function):
+#     def wrapper_function():
+#         print("Before calling the original function")# ye phly me chalyga
+#         original_function()#isky parameter me wo func ayga jo hmne decorator_function ko pass kiya he
+#         print("After calling the original function")# ye bad me chalyga func ke jispr decorater lgaya he
+#     return wrapper_function
+        
+#  #DECORATION FUNCTION WRAPPER FUNCTION ko return krta he iska kam ye he ke hm apni class ya func kisi bhi kam ke oper or nichy koch print krwana chahty hen to hm isy decorator function ka use kr krty hen bina os func ko chery 
+
+
+# @decorator_function
+# def greet():
+#     print("Hello, how are you?")
+    
+#     # jesy ismy bs ak sms he lekin osky oper meny decorate ke use kiya he to os function me jo koch he osy phly decorater wala kam chalyga
+    
+# greet()    
+# ********Generator Function********
+# generator function ye krta he ke hm return ke bad koch or nhikam kr skty lekin generatorisko posible bnata he
+# yield lgata he ye return ki jga pr or vriable ko hm next ke ander likhty hen print krty waqt
+def generator_function():
+    yield "Hello"
+    yield "World"
+
+generator = generator_function()
+print(next(generator)) # ye helo ko print krta he
+print(next(generator)) # ye world ko print krta he
