@@ -663,25 +663,25 @@
 
 #  Lamda ********
 
-lambda_func =lambda num :num*2 
-# lambda function ak bina name ka func hota he anonimus fuc bhi khlata he ye or isko hm variable me rkh kr name ety hen 
+# lambda_func =lambda num :num*2 
+# # lambda function ak bina name ka func hota he anonimus fuc bhi khlata he ye or isko hm variable me rkh kr name ety hen 
 
-# num parameter he or num*2 ye consition he yani jo bhi krwana he or ismy return likhny ki zarorat nhi hoti wo direct krta he return 
-print(lambda_func(5))
+# # num parameter he or num*2 ye consition he yani jo bhi krwana he or ismy return likhny ki zarorat nhi hoti wo direct krta he return 
+# print(lambda_func(5))
 
-# # map function******
-# numbers:int=[1,2,3,4,5]
-# new_list=map(lambda num : num*2,numbers)
-# # map ak function leta he jismy hm kam krty hen lambta leta he or ak list jisky liye kam krta he
-# # ye ak new list create krta he
-# map() function mein output ko list mein convert karna zaroori hai
-# print(list(new_list))
+# # # map function******
+# # numbers:int=[1,2,3,4,5]
+# # new_list=map(lambda num : num*2,numbers)
+# # # map ak function leta he jismy hm kam krty hen lambta leta he or ak list jisky liye kam krta he
+# # # ye ak new list create krta he
+# # map() function mein output ko list mein convert karna zaroori hai
+# # print(list(new_list))
 
-# Filter function
-filter_list:list[int]=[1,2,3,4,5]
-filter(lambda num : num>3,filter_list)
-# ye bhi akfun or list leta he or filter krky nikalta he yanijo conditioan pas hoti osko ye filter yani rkhta he baqi sb nikal deta he
-# ye bhi new list create krta he orignalko change nhi krta
+# # Filter function
+# filter_list:list[int]=[1,2,3,4,5]
+# filter(lambda num : num>3,filter_list)
+# # ye bhi akfun or list leta he or filter krky nikalta he yanijo conditioan pas hoti osko ye filter yani rkhta he baqi sb nikal deta he
+# # ye bhi new list create krta he orignalko change nhi krta
 
 
 
@@ -821,11 +821,99 @@ filter(lambda num : num>3,filter_list)
  
 
 
+# ///////////////// MEMORY MANAGEMENT /////////////////
+# python me hm jb koi bhi vaiable bnaty hen to wo print ho jata he agr name hta den to wo errro dega kioky jv name ka variable hi hta diya
+# /to wo prin nhi ho skta iska matlb wokhi store hi nhi howa tha wrna to htany sy wo acces kr deta ye tempoary memory use krta he 
+
+# # id 
+# name1="faiza"
+# name2="faiza"
+# # id ak location hoti he ke variable kis location pr store he
+# # in dono ki id same hogi jis bhi varible ki value same hogi oski id bhi same hogi
+# name1=name2
+# # iski id bhi same hogi kioky dono me same value he python apni memory kodublicate ke liye zaya nhi kta
+# # lekin alag file me hoga agr to id same nhi hogi bhly value same ho kioky file alag alag time pr run hoti he 
 
 
+# array1=[1,2,3]
+# array2=[1,2,3]
+# # ismy alag alag aygi id kioky ye mutible he jbky 
+ 
+# aray1=array2
+# # ye id same  hogi kioky ismy to ak variable hi as kr diya he jisny apni memory phky sy bnai thi to 2 wala bhi dhondnywahi jayga 1 me same location pr
+# # dictionary ka bhi blkl same array ki trha he 
+
+# # ///////// ASYN CHRONOUS PROGRAMMING /////////////////
+# import asyncio
+# # async me time west nhi hota syncronous program me hota he kioky wo agy koi code run na ho to agy ke code ko run nhi hony deta
+# async def greet (name):
+#     await asyncio.sleep(3)
+#     # await tb tk rokta he jb tk nam1 ki value na  mil jaye await means pose ho jana rokna 
+#     print(f"hello {name}")
+#     # ismy aync ef sy ply lgta he await ko hm async def me hi likh skty hen
 
 
-   
+# async def greet1(name2):
+#     await asyncio.sleep(1)
+#     print("hello ",name2)
+
+# async def main():
+#     await asyncio.gather(greet("faiza"),greet1("areeba"))
+#     # kisi do function ko ak sath chalaty hen to gather ka use krty hen 
+    
+# asyncio.run(main())
+    
+    
+    
+#  # //////////// UNPACKING IN PYTHHON  ////////////////
+# #  yani kii touple sy value nikalna ya list sy value nikalna ya dictionary sy value nikalna
+
+# name =["faiza","areeba"]
+# print(name[1])
+# # ye normal tarika 
+# n1,n2=name
+# print(n1)
+# # ye hmny unpaking krli 
+# # esy hi same karna hai  touple ke liye 
+
+# # for dictionary
+# user={"name":"faiza","age":22}
+# name1,age1=user.values()
+# print(name1)
+# # variable ka name koch bhikh skty hen unpacking ke liye
+
+# # ////// TERNARY OPERATOR //////
+# # ternary operator ka use krty hen jab hum ek condition ko check krna hai aur us
+# result=12 
+# ans="true" if result > 10 else "false"
+# print(ans)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 # ////////////INFORMATION//////////////// 
   
 # Ture or False me T or F capital me hota he
@@ -841,6 +929,7 @@ filter(lambda num : num>3,filter_list)
 # code ko blkl start Sy likhengy space dekr nhi likh skty start me jesy print ya variable ka name
 
 # agr hm double slash lgaegengy to so single value return kry ga 0.6 ANS HOGA / ka to // ye bhi kryga devide lekin ye int value return kryga 0
+
 
 
 
