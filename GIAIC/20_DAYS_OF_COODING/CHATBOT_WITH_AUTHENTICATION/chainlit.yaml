@@ -1,0 +1,22 @@
+chainlit :2.0.0
+
+# interface settings
+UI:
+  name : chatbort
+  description : a chatbot for your data
+
+# Message settings
+defaults_expend_message : true
+
+# Aoth setting 
+auth:
+ required : true
+ provider : 
+  - github
+
+# Aoth configuration
+auth_provider:
+  github:
+  client_id : $(OAUTH_GITHUB_CLIENT_ID)
+  client_secret : $(OAUTH_GITHUB_CLIENT_SECRET)
+
