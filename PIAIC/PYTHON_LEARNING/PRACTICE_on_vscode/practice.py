@@ -578,6 +578,8 @@
 
 # hm paython me is trha krty hen import  krty hen 
 
+# from math import *
+#  is trha hm isi chiz k sary methods koimport kr skty hen 
 
 # //////////////// Dicshionarries ////////////////
 
@@ -887,11 +889,49 @@
 # result=12 
 # ans="true" if result > 10 else "false"
 # print(ans)
+
+# ////////////
+# """ismy hm multi line comment likh skty hen """
+
+# ////////FROZEN SET/////////
+# FROZEN set ka matlb he kisi chiz ka frize ho jana rok jana
+# frozen set memory Chang kr deta he kisi value ki agr koi 2 variable me same value he or ak ko frozen me rakh diya to wo different khlaigi
+# my_set = {1, 2, 3, 4, 5}
+# frozen_set = frozenset([1, 2, 3, 4, 5])
+# ye same nhi khlayga matlb === nhi
+
+# lekin agr variable pass kr diya frozen me to wo phir ho jayga same Yani true
+# my_set == frozen_set
+# ab ye true hoga 
+
+# awt or frozen set ak trha ka hi hota he yani uniq value rkhta he lekin forzen change nhi krny deta yani remove add wagera 
  
  
  
- 
- 
+#  ////////////MATCH CASES ////////////
+# value = 3
+# match value:
+#     case 1:
+#         print("One")
+#     case 2:
+#         print("Two")
+#     case _:
+#         print("Other")
+
+# ye swich cases ki trha hota he sahi condition ko run kr deta he
+#  ////////////////////////
+
+#  network error hm except me wb likhty hen JB api me error ata he
+#  SQL mean starcture query language
+# python me nhihota number or string concatinate
+# Print is a built-in function in Python
+
+#  ///////////////////////////-----------*********************************///////////////////////////
+
+# python in development mood
+# source code =>ready to use
+# python in production mode
+# source code => interpreter => operting sytem => hardware
  
  
  

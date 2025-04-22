@@ -7,6 +7,8 @@ uv init
 #ye initialize kryga pekeges
 uv add ruff
 #ye add ruff to uv
+ctrl+shift+p =>select python interpreteer=>click on recomended
+#bhut sar version aygy osmy sy jiskyagy likha  ho recomended os pr click krna hoga
 
 create file app.py (ya koch bhi)
 
