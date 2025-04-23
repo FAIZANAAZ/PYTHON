@@ -926,6 +926,13 @@
 # python me nhihota number or string concatinate
 # Print is a built-in function in Python
 
+print(2**2**3**4**5)
+# ye right side sy calculate hona start hota he phly 4 *4*4*4*4 hoga jo anser ayga wo phir otni bar 3 hoga phir jo ans ayga phir wo 2 ka exponent bn jayga
+
+# VERLAS OPERATOR
+# ye ak hi line me likhy jay hen jismy hm asign bhikrty hen or condition ko check krty hen isko hm :=sy show krty hen
+(a := 1 )>2
+print(a)
 #  ///////////////////////////-----------*********************************///////////////////////////
 
 # python in development mood
