@@ -359,3 +359,48 @@ def generator_function():
 generator = generator_function()
 print(next(generator)) # ye helo ko print krta he
 print(next(generator)) # ye world ko print krta he
+
+
+# ********************************************
+
+# 1. @property, @property.setter, @property.deleter Decorators:
+# @property: Yeh decorator ek method ko getter bana deta hai. Iska matlab hai ki aap method ko attribute ki tarah access kar sakte hain.
+
+# Example: product.price ko method ke tarah access kar sakte hain, jaise wo ek regular attribute ho.
+
+# @price.setter: Yeh decorator method ko setter bana deta hai. Jab aap product.price = value likhte hain, to setter method execute hota hai.
+
+# @price.deleter: Yeh decorator deleter method define karta hai, jo del product.price call karne par execute hota hai.
+
+# 2. Custom Exception (InvalidAgeError):
+# InvalidAgeError: Custom exception define kiya gaya hai jo age validation ke liye use hota hai. Agar age invalid ho (e.g., age < 18), to InvalidAgeError raise hota hai.
+
+# try...except block ka use karke exception handle karte hain.
+
+# 3. __iter__() and __next__() Methods (Making a Class Iterable):
+# __iter__(): Is method ko implement kar ke object ko iterable bana dete hain. __iter__() method ke zariye object ko starting point se initialize karte hain.
+
+# __next__(): Is method ko implement kar ke object ke next value ko return karte hain jab next() call kiya jata hai. Jab iteration complete ho jati hai, to StopIteration exception raise karte hain.
+
+# self ko __iter__() mein return karna: Jab aap self ko __iter__() mein return karte hain, to aap apne object ko iterator object bana dete hain. Python ko pata chal jata hai ki is object mein __next__() method hai.
+
+# 4. __call__() Method:
+# __call__() method ka use object ko function ki tarah call karne ke liye kiya jata hai.
+
+# Jab aap object ko object() ki tarah call karte hain, to __call__() method execute hota hai.
+
+# Example: multiply_by_2(5) object ko function ki tarah call kiya jata hai aur __call__() method execute hota hai.
+
+# 5. Aggregation and Composition:
+# Aggregation: Ek class doosri class ka reference rakhti hai, lekin dono objects independently exist karte hain.
+
+# Example: University class ka object Student class ka reference rakhta hai, lekin agar University ka object delete ho jaye, to Student ka object unaffected rehta hai.
+
+# Composition: Ek class doosri class ka object apne andar rakhti hai, aur dono objects tightly coupled hote hain. Agar parent object delete ho jata hai, to child object bhi delete hota hai.
+
+# __call__(): Is method ko implement karne se object ko function ki tarah call kiya ja sakta hai.
+
+# 7. Method Resolution Order (MRO) and Inheritance:
+# MRO: Python method resolution order (MRO) ko follow karta hai jab multiple inheritance hoti hai. Jab aap mro() call karte hain, to Python classes ke inheritance hierarchy ko follow karta hai.
+
+# Example: Class D inherits from Class B and Class C, to MRO se yeh decide hota hai ki method kis class se call hoga.
