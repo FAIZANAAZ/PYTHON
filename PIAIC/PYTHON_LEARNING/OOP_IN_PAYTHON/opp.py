@@ -352,13 +352,13 @@
 # ********Generator Function********
 # generator function ye krta he ke hm return ke bad koch or nhikam kr skty lekin generatorisko posible bnata he
 # yield lgata he ye return ki jga pr or vriable ko hm next ke ander likhty hen print krty waqt
-def generator_function():
-    yield "Hello"
-    yield "World"
+# def generator_function():
+#     yield "Hello"
+#     yield "World"
 
-generator = generator_function()
-print(next(generator)) # ye helo ko print krta he
-print(next(generator)) # ye world ko print krta he
+# generator = generator_function()
+# print(next(generator)) # ye helo ko print krta he
+# print(next(generator)) # ye world ko print krta he
 
 
 # ********************************************
@@ -404,3 +404,201 @@ print(next(generator)) # ye world ko print krta he
 # MRO: Python method resolution order (MRO) ko follow karta hai jab multiple inheritance hoti hai. Jab aap mro() call karte hain, to Python classes ke inheritance hierarchy ko follow karta hai.
 
 # Example: Class D inherits from Class B and Class C, to MRO se yeh decide hota hai ki method kis class se call hoga.
+
+
+# *****************************************
+
+# CLASS METHOD 
+# class Product:
+#     age=0
+#     def __init__(self, price, name):
+#         self.price = price
+        
+#     @classmethod    
+#     def greet(cls):
+#         print("Hello, my name is", cls.name)
+        
+# Product.name # YE ACEESS NHI HOGA kioky bina instance ke hm kisi atrinute ko acces nhi kr skty 
+# Product.age # ye acces ho jayga kioky ye he clss ko attribute yhi class variable bhi khlata he  he isi trha ak hota he class method lekin mehod to sb class me hi hoy hen lekin 
+            #  osko class method hm bnaty hen or wo hm bnaty hen @classmethod decorator ko use krky wrna nhi bnta wo or self ki jha
+            # cls lgaty hen atributes me
+            
+            # lekin ye class ki chizen instance ke sath bhi hm aceess  kr skty hen 
+# Product.greet()
+
+# withinstance=Product(100,"Rohan")
+# withinstance.greet()      # ye intance method khlayga ab 
+
+# *****************************************
+
+# STATIC METHOD 
+# class StaticMethod:
+    
+
+        
+#     @staticmethod    
+#     def HELLO(a,b):
+#         print("i am static",a+b)
+        
+#         #ye hmy class ke name ke sath bhi acees hoga or instance ke sath bhi lekin ismy cls wagera ka koi kam ni he oe na hi ye self lega
+#         instnce=StaticMethod()
+#         instnce.HELLO(10,20)        
+         
+# # *****************************************
+
+# def decorator_function(cls):
+#     def greet(self):
+#         return "hello "+self.name
+#     cls.greet=greet
+#     return cls
+    
+# @decorator_function  
+# class Person:
+#     def __init__(self,name):
+#         self.name=name
+        
+# taha=Person("taha")
+# taha.greet()
+
+# decorater hm jisky oper bhi ayga decorater ki chizen osky ander a jaygi jesy greet ka functionnhi tha cllass me lekin a gya wo
+
+
+# *****************************************
+# oop ak paradigm he jo ke object object wise kam krty hen
+
+# mro
+# class Father():
+#     def __init__(self):
+#         print("father")
+        
+        
+# class Mother():
+#     def __init__(self):
+#         print("Mother")
+# class child(Father,Mother):
+#     def __init__(self):
+#         self.name="child"
+
+
+# print(child.mro())
+# ye squence btata he order btata he ke sbsy phly to ans me child ayga phir wo class aygi jo phly inherite  hogi 
+# or agr same method ya variable ho dono class me or child pr na ho to bhi child ke pas to a jayga or hm acees krengy child sy
+# to wo os class ka othayga jo phly inherite hoi hogi 
+# or agr child me bhi wahi ho towo to overwirde ho jayga 
+
+
+
+# *****************************************
+
+# CALLABLE
+# class A():
+#     def __init__(self):
+#         print("A")
+        
+#     def __call__(self):
+#         pass    
+    
+#     def __str__(self):
+#         return "i am not callable  instance but i am without callable instance"
+        
+# instancee=A()
+# print(instancee())
+# print(instancee)
+# hm instance ko call nhi kr skty lekin hm __call__ lga kr bnygy koi function to instace ko call krny sy wo call ho jayga ak trha sy instace callable bn gya  
+
+# or hm agr instance ko chalaygy nhi () sy direct print krwaygy to wo weeor dega ak number dedega to osko bhi hm handle krty hen str sy to phir wo str 
+# ko chalayga str ko error ki jga bina call kiye  
+
+# *****************************************
+
+# class Newfirst():
+#     def __new__(cls):
+#         print("first")
+#         return super().__new__(cls)
+#     def __init__(self):
+#         print("second")
+      
+    #   def __del__(self):
+    #       print("third")
+# # ismy ye he ke he lekintance jesy hi bnaty hen init khod chal jata  he lekin osy bhi phky backend pr new run hota he or wo super ki madad sy init ko de deta he wrna init nh chlyga 
+# # isi liye hm agr new likhengy to sbsy phly new hi chlyga 
+# or hm nhi likhty to wo ander ander chlara hota he 
+# isi trha del jb chalyga tb hm kisi object yani intance bna kr osko delet krdengy jesy
+
+# isinstance=Newfirst()
+# del isinstance
+
+
+
+# instances=Newfirst()
+# # phly print hoga first
+
+# *****************************************
+# Composition and Aggregation
+
+# Composition
+# iska matlb hota he strong relation bnana 
+class Person():
+    def __init__(self):
+     self.name="faiza"   
+    def info(self):
+        return f"hello my name is {self.name}"
+    
+    
+class Address():
+    def __init__(self):
+        self.street=Person()
+        # yha hmny person ko hi pass kr diya
+        
+c=Address()
+c.street.info() 
+# yaha pr address class ka object bnaya he or usme person class ka function call kiya he or wo chlyga bhi ye ak strong relation he 
+
+class Week:
+    def __init__(self, day):
+        self.day = day
+
+    def __repr__(self):
+        return f"Week(day={self.day})"
+
+class Month:
+    def __init__(self, weeks=None):
+        # weeks ko list expected kar rahe hain, default None
+        if weeks is None:
+            self.weeks = []
+        else:
+            self.weeks = weeks
+
+    def __repr__(self):
+        return f"Month(weeks={self.weeks})"
+
+# Week objects independently create karo
+wee1 = Week("Monday")
+wee2 = Week("Tuesday")
+
+# Month ko weeks pass karo - aggregation relation
+mon = Month([wee1, wee2])
+# ye ak week relationship he yani ke hmny isko diya to he argument lekin agr hm na bhi den towo sahi chlyga errro nhi dega kioy by default hmny osko none rkha he 
+# to week he yani dependent nhi he wo dosri class pr agr dosri class kabhi delet ho jati he to ospr koi effect nhi hoga wo phir bhi chal jayga 
+
+print(mon)
+print(wee1)
+
+# 
+
+# *****************************************
+
+# incapsulation
+# hm geter fuction ke oper likhengy @property private variable ko access krNT KE LIEY
+
+# OR SETER KE OPER @private_variable_name.setter ko likhengy private variable ko modify krNT KE LIEY
+
+
+# or del krny ke liye @private_variable_name.deleter ko likhengy or class ke bahir
+# delinstance.private_variable
+
+# *****************************************
+
+# object/instance bnta he class sy or class bnta he ceate hota he meta/TYPE class sy
+
+

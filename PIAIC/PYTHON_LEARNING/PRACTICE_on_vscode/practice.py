@@ -108,6 +108,13 @@
 # faiza naaz"""
 # print(name_me)
 
+# name ="hello world"
+# print(name.index("w"))
+# # iska ans ayga 6
+# # lekin age hm likh den
+# print(name.index("world"))
+# tb bhi ye 6 hi btayga yani wo bs first word ko dekh kr index number retrun krdega
+
 # # //////////////////////////
 
 # my_name_is:str="faiza"
@@ -638,6 +645,10 @@
 
 # hm esy kisi value ko update kr skty hen 
 
+list_dic=[("1",2),("4",5),("7",8)]
+print(dict(list_dic))
+# hm tuple me 2value rkh kr hi list me rakhengy tb hi wo dictinary me change kryga direct list ko nhi kryga 
+
 
 # ////////////////// COMPRIHENSION ////////////////
 # ye dictionary or list ko bnany ka quick tarika he 
@@ -920,6 +931,10 @@
 
 # ye swich cases ki trha hota he sahi condition ko run kr deta he
 #  ////////////////////////
+# \b isy , wagera ht kr text cleane ho jayga
+# \t 
+#  ////////////////////////
+
 
 #  network error hm except me wb likhty hen JB api me error ata he
 #  SQL mean starcture query language
