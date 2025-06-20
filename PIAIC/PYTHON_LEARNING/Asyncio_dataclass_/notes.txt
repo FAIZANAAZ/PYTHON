@@ -1,0 +1,242 @@
+Asyncio*********
+pythomme async function ko run krny ke liye hmy Asyncio ka use krna hota he
+ismy kai methods hoty hen *******
+
+ asyncio.create_task()
+ Iska main purpose yeh hai ke aap multiple asynchronous tasks ko ek time pe run kar sakein. Jaise
+  agar aapko multiple I/O operations ya network requests handle karni hain, toh yeh method aapko help karta hai. 
+  Tasks ko pause karke, aap baaki tasks ko bhi run karne de sakte hain, jo concurrency ka basic concept hai.
+
+  coroutine ***ye ak esa function he jo asyncronus task me agr kisi task ko perform hony me waqt lgta he to osko ye puse krdeta he or baqi task run hoty rhty hen
+  or phir dobara start kr deta he 
+
+concurrency ka matlb he ak hi waqt me multi task handle krna 
+
+asyncio.gather() *******
+ka main purpose yeh hai ke aap multiple coroutines ko concurrently run kar sakein aur unke results ko ek saath wait karke return kar sakein.
+
+hm agr await ke bina asyncronus function run krengy wo execute nhi hoga 
+
+
+asyncio.gather() aur asyncio.TaskGroup() dono ka use concurrency ke liye hota hai, lekin dono mein kuch differences hain, especially exception handling aur task management ke hawale se.
+
+Differences:
+asyncio.gather():
+
+Yeh multiple coroutines ko concurrently run karta hai aur unke results ko gather karke return karta hai.
+
+Agar koi task exception throw karta hai, toh gather function us exception ko propagate karta hai aur baaki tasks ko rok deta hai.
+
+asyncio.TaskGroup():
+
+Yeh bhi multiple tasks ko concurrently run karta hai, lekin iska main fayda yeh hai ke yeh better exception handling aur context management provide karta hai.
+
+Agar koi task exception throw karta hai, toh TaskGroup exception ko handle kar sakta hai aur baaki tasks ko continue karne ki permission deta hai.
+
+
+*************
+Agar aap Task ke saath callback function add karna chahte hain, toh aapko add_done_callback() method use karna hota hai.
+ Is method ka use karke aap ek function specify kar sakte hain jo task complete hone ke baad automatically execute ho jayega.
+
+add_done_callback() method task ke complete hone ke baad callback function ko call karta hai.
+ Yeh method ek callback function ko add karta hai jo task complete hone par call hota hai, chahe task successfully complete ho ya usme exception aaye.
+
+ ************
+ asyncio.shield() ka use kisi coroutine ko cancel hone se rokne ke liye hota hai. Agar aap koi 
+ task run kar rahe hain aur uske saath shield() apply karte hain, toh us task ko cancel nahi kiya ja sakta, chahe event loop mein koi dusra task cancel ho jaye.
+
+asyncio.shield() se aap ek coroutine ko protect kar sakte hain, isse agar koi exception ya cancellation signal bhi 
+bheja jaye, toh yeh coroutine execute hona continue karega.
+
+***********
+Event loop asyncio ka core hota hai jo coroutines aur callbacks ko execute karta hai.
+ Event loop ka main kaam hai ki woh asynchronous code ko manage kare aur schedule kare takay woh efficiently execute ho sake.
+
+************
+Agar aap async operation ke liye timeout implement karna chahte hain, toh asyncio.wait_for() sahi method hai. 
+Yeh method ek coroutine ko execute karta hai aur agar woh specified
+ time (timeout) mein complete nahi hota, toh woh TimeoutError raise karta hai.
+
+ **********
+ Queue
+  ka matlab hai ek line ya sequence jisme cheezein ek particular order mein rakhi jaati hain, aur unhe pehle aayi,
+   pehle mili (FIFO - First In, First Out) ke principle par
+  process kiya jata hai. Matlab, jo cheez pehle aati hai, woh pehle nikaali jaati hai.
+ asyncio mein Queue ka use asynchronous tasks ke beech data ko queue karne ke liye hota hai. Aap asyncio.Queue(), asyncio.PriorityQueue(),
+  aur asyncio.Queue(maxsize=10) use kar sakte hain, lekin asyncio.ThreadQueue() koi valid method nahi hai.
+
+**********
+aiohttp.ClientSession ka use web requests bhejne ke liye hota hai, aur jab aapka kaam session ke saath complete ho jaye
+, toh usay properly close karna zaroori hota hai.
+ await session.close() ka use karke aap session ko properly close kar sakte hain.  
+************
+asyncio.Lock() ka use asynchronous code mein race conditions ko prevent karne ke liye hota hai. Race conditions tab hoti hain jab multiple
+ coroutines ek hi resource ko simultaneously access karte hain, jo data corruption ya unexpected behavior ka reason ban sakta hai.
+
+asyncio.Lock() ek lock provide karta hai jo kisi ek time pe sirf ek coroutine ko resource access karne ka moka deta hai. 
+Agar ek coroutine resource use kar raha ho, toh doosra coroutine us resource ko tab tak access nahi kar sakta jab tak pehla
+ coroutine apna kaam complete nahi kar leta.
+
+***********
+Python mein coroutines ko mark karne ke liye pre-Python 3.5 mein @asyncio.coroutine decorator use kiya jata tha.
+ Yeh decorator function ko coroutine bana deta tha, jo asynchronous operations ke liye use hoti thi.
+
+@asyncio.coroutine decorator ko use kar ke aap functions ko asynchronous banate the, jisme aap yield ya await 
+ke sath asynchronous operations perform kar sakte the. 
+
+************
+asyncio.as_completed() ek iterator return karta hai jo aapko coroutines ya tasks ko unke complete hone ke baad yield karta hai.
+ Iska matlab hai ke jab aap multiple 
+tasks ko asyncio.as_completed() ke saath run karte hain, yeh iterator un tasks ko ek ke baad ek aapko unke complete hone ke sequence mein return karta hai.
+
+*********
+Agar aapko blocking I/O ko asyncio event loop mein run karte hue block nahi karna hai, toh aapko asyncio.run_in_executor() ya asyncio.to_thread() ka use karna chahiye.
+
+asyncio.run_in_executor(): Yeh method kisi blocking I/O task ko separate thread ya process
+ mein run karta hai, taake woh event loop ko block na kare. Aap isme None argument pass karte hain taake default executor (usually a thread pool) use ho.
+
+asyncio.to_thread(): Yeh method bhi blocking I/O ko ek alag thread mein run karne ke liye use hota hai, aur 
+yeh method Python 3.9 mein introduce hua tha. Yeh ek simple aur clean way hai blocking I/O ko handle karne ka.
+
+***********
+asyncio.sleep(0) use karte hain, yeh coroutine ko temporarily pause karta hai aur event loop ko control dene ka moka deta hai,
+ taake doosre tasks execute ho sakein.Yeh actual sleep nahi karta, balkay event loop ko thoda time dene ke liye hota hai.
+
+ ***********
+ asyncio.TimeoutError woh exception hai jo asyncio mein timeout errors ko handle karne ke liye catch ki jati hai. Jab aap asyncio
+  mein kisi operation ko timeout ke saath run karte hain (jaise asyncio.wait_for()), agar woh operation specified time mein complete 
+  nahi hota, toh asyncio.TimeoutError raise hota hai.
+
+**********
+asyncio.Semaphore ka use concurrent operations ko limit karne ke liye hota hai. Agar aapke paas multiple coroutines
+ hain jo ek hi resource ko access kar rahe hain, toh semaphore aapko maximum concurrent tasks ka limit set 
+karne ka moka deta hai. Yeh ek tarah se control karta hai ke kitni coroutines ek time pe ek resource ko access kar sakti hain.
+
+************
+Agar aapko ek running Task ko cancel karna ho, toh aap task.cancel() method ka use karte hain. Is method ka kaam yeh hota hai
+ ke woh task ko cancel karne ka signal bhejta hai. Agar task abhi bhi running hai, toh yeh CancelledError raise karega jab task complete hoga.
+
+*************
+asyncio.iscoroutinefunction() ka use yeh check karne ke liye hota hai ke kya ek function ko async def ke saath define kiya gaya hai. Agar
+ function async def se define hota hai, toh yeh function ek coroutine hota hai, aur iscoroutinefunction() usay True return karega.
+
+***********
+Python mein generic functions ko define karne ke liye, aapko TypeVar ka use karna padta hai, jo typing module se import hota hai. 
+Aap TypeVar ko ek generic type define karne ke liye use karte hain, jisse function ko kisi bhi type ke argument ke sath call kiya ja sakta hai.
+
+***********
+TypeVar('T', bound=str) ka matlab hai ke T ko str ya str ke kisi bhi subtype ke roop mein define kiya gaya hai. Iska matlab hai ke T ko str 
+type ka hona chahiye ya phir str se derived types (subtypes) ho sakte hain, jaise ke bytes ya memoryview.
+
+*************
+Protocol ka purpose structural subtyping ko define karna hai, jo duck typing ke concept ko type system mein integrate karta hai. Duck typing
+ ka matlab hota hai ke agar koi object kisi specific behavior ko follow karta hai, toh woh object us type ka hota hai, chahe woh explicitly
+  us type se inherit na kar raha ho.
+
+Protocol ka use aap karte hain jab aap chahte hain ke kisi object ko kisi specific interface ya behavior ko match karne ki requirement ho, 
+bina us object ko explicitly inherit kiye hue.
+
+**********
+Agar aapko ek function define karna hai jo kisi bhi callable ko accept kare (chahe woh function ho, method ho, ya koi bhi object jo __call__
+ method ko implement karta ho), toh Callable[..., Any] ka use karte hain.
+
+ ************
+ Agar aapko variable-length tuple specify karna ho jisme saare elements ka type same ho, toh aap tuple[int, ...] ka use karte hain.
+
+ **********
+ @overload decorator ka use Python mein multiple signatures ke liye type hints provide karne ke liye hota hai. Iska matlab hai ke agar
+  aap ek function ko multiple tarah se call kar sakte hain, toh aap @overload decorator ka use karte hain taake har alag signature ke liye 
+  type hints define kiya ja sake.
+  ************
+dict[str, int] aur Dict[str, int] dono hi correct tareeqe hain dictionary ko type hint karne ke liye, lekin yeh Python version par depend karta hai:
+
+dict[str, int] ka syntax Python 3.9 aur uske baad introduce hua tha, jisme aap dict ko directly type hint ke liye use karte hain.
+
+Dict[str, int] ka use typing module mein hota tha aur yeh purane versions mein use hota tha (Python 3.8 aur usse pehle). Ismein Dict ko import 
+karna padta tha typing se.
+************
+Agar aapko TypeVar ko specific types ke liye constrain karna ho, toh aap constraint parameter ka use karte hain. TypeVar('T', constraint=[int, str]) 
+ka matlab hai ke T ko sirf int aur str types tak limit kar diya gaya hai. Isse T sirf in do types mein se koi bhi type ho sakta hai.
+
+*************
+ParamSpec ka use aap tab karte hain jab aapko higher-order functions ke parameters ke types ko preserve karna ho. Yeh specifically un functions mein use 
+hota hai jo doosre functions ko arguments ke taur par accept karte hain. ParamSpec aapko parameter types ko propagate karne ki flexibility deta hai, taake
+ aap original function ke signature ko preserve kar sakein jab usse kisi higher-order function mein pass kiya jata hai.
+
+**********
+ reveal_type() ka use type checkers ke liye hota hai, jisme yeh function kisi variable ya expression ka inferred type display karta hai. Yeh specifically
+  mypy jaise static type checkers ke saath use hota hai taake aapko variable ka exact type pata chal sake jo type checker ne infer kiya hai.
+
+**********
+Python mein @dataclass decorator ka use aap data classes create karne ke liye karte hain.
+
+**********
+@dataclass decorator ka use karte waqt Python automatically kuch special methods generate karta hai, lekin __str__ method
+ automatically generate nahi hota. Iske badle, __repr__ method generate hota hai, jo object ko represent karne ka tareeqa define karta hai.
+
+__init__ method ko automatically generate kiya jata hai, jo class ke attributes ko initialize karta hai.
+
+__repr__ method ko automatically generate kiya jata hai, jo object ki string representation provide karta hai.
+
+__eq__ method bhi automatically generate hota hai, jo objects ki equality ko compare karta hai.
+
+*************
+Agar aapko immutable dataclass create karni ho, jisme object ke attributes ko modify nahi kiya ja sakta, toh aap @dataclass(frozen=True) ka
+
+ use karte hain. Yeh decorator ke saath frozen=True ka option dene se dataclass ke attributes ko immutable bana diya jata hai, yani aap uske
+  values ko change nahi kar sakte once the object is created.
+
+**********
+
+field(default_factory=list) ka use aap dataclass attributes ke liye karte hain, taake har instance ke liye ek nayi list instance create ho. 
+Iska matlab hai ke agar aap dataclass ke multiple objects create kar rahe hain, toh har object ke liye ek alag list banegi.
+
+*********
+
+
+Agar aap dataclass mein kisi field ko __init__ method se exclude karna chahte hain, toh aap field(init=False) ka use karte hain.
+ Iska matlab hai ke yeh field constructor mein initialize nahi hogi.
+
+*******
+__post_init__ ek special method hai jo dataclass mein automatically call hota hai __init__ method ke baad. Jab aap dataclass ka 
+instance create karte hain, to __init__ method pehle execute hota hai aur phir agar aap __post_init__ method define karte hain 
+to wo uske baad run hota hai. Yeh method mainly kisi additional initialization ya validation ke liye use hota hai, jaise agar aapko
+ kisi field ki value set karni ho ya kisi cheez ko validate karna ho.
+
+***********
+Agar aap chahte hain ke aapki dataclass hashable ho, to aapko __hash__ method ko manually implement karna padega. By default,
+ Python dataclasses ko hashable nahi banata  
+
+ ******
+
+ InitVar ka use hum dataclass mein un variables ko define karne ke liye karte hain jo sirf object initialization ke waqt pass 
+ hote hain lekin instance ke attributes mein store nahi hote. Yeh variables sirf constructor (__init__) mein kaam aate hain, 
+ lekin unka koi record dataclass ke __repr__ ya __eq__ method mein nahi hota. Matlab, yeh variables sirf initialize karte waqt 
+ use hote hain, aur baad mein unka koi zikr nahi hota.
+**********
+Agar aap chahte hain ke kisi field ko __repr__ method mein include na kiya jaye, toh aap us field ke liye field(repr=False) specify karte hain. 
+Iska matlab hai ke jab aap dataclass ka instance print karenge ya __repr__ call hoga, toh yeh field us output mein nahi dikhayi degi.
+***********
+Agar aapko apne dataclass mein slots use karne hain, toh aapko manually __slots__ define karna padta hai. __slots__ ek special variable hota 
+hai jo class ke attributes ko optimize karta hai, taake unka storage kam ho. Iska use karne se aapko instance attributes ko dynamically add 
+karne ki jagah fixed set of attributes milte hain, jo memory efficiency ko improve karta hai.
+
+*********
+KW_ONLY ka use aap dataclass ke __init__ method mein fields ko keyword-only banane ke liye karte hain. Jab aap KW_ONLY use karte hain,
+ toh uske baad jo bhi fields aayengi, unko __init__ mein sirf keyword arguments ke zariye hi pass kiya ja sakta hai. Isse aapko field 
+ ke naam se confusion nahi hota aur code ko zyada readable banaya jata hai.
+
+ *****
+ Agar aapko kisi dataclass instance ke tamam fields chahiye, toh aap dataclasses.fields(instance) ka use karte hain. Is method ke zariye
+  aapko us instance ke sab attributes mil jate hain jo dataclass ke fields hain.
+  *******
+
+Jab aap @dataclass(order=True) ka use karte hain, toh yeh dataclass ko automatically comparison methods generate karne ka keh deta hai.
+ Iska matlab hai ke aapki 
+class ko __lt__ (less than), __le__ (less than or equal), __gt__ (greater than), aur __ge__ (greater than or equal) methods mil jate hain.
+ Is tarah se aap apne dataclass objects ko compare kar sakte hain.  
+
+ *********
+ Agar aap chahte hain ke kisi dataclass instance ko dictionary mein convert kiya jaye, toh aap dataclasses.asdict(instance) ka use karte hain. 
+ Yeh method aapke dataclass instance ke saare fields ko ek dictionary mein convert kar dega, jahan field names dictionary ke keys aur unke values 
+ unki corresponding values hain.
